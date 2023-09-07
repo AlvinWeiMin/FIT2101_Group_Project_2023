@@ -1,0 +1,39 @@
+
+/* Resetting some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;/*this is the font of what we are using in the webpag\*/
+    background-color: #f4f4f4;/*you can just click on the text box to change the colour of what a specific part of the webpage looks like*/
+    color: #333;
+}
+
+header, nav, main, footer {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff; /*you can just click on the text box to change the colour of what a specific part of the webpage looks like*/
+    border-radius: 5px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+}
