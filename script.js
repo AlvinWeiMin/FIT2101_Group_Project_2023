@@ -21,3 +21,20 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutLink = document.getElementById('catalogueLink');
+
+    aboutLink.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent the default behavior of the link
+        window.location.href = 'catalogue.html';  // Redirect to the about.html page
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutLink = document.getElementById('contactLink');
+
+    aboutLink.addEventListener('click', function(event) {
+        event.preventDefault();  // Prevent the default behavior of the link
+        window.location.href = 'contact.html';  // Redirect to the about.html page
+    });
+});
