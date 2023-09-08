@@ -18,6 +18,7 @@ header, nav, main, footer {
     border-radius: 5px;
 }
 
+
 nav ul {
     list-style-type: none;
     display: flex;
