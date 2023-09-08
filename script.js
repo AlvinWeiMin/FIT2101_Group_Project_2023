@@ -1,40 +1,68 @@
+// Search functionality moved out of DOMContentLoaded scope
+function performSearch() {
+    // Get the value from the search input
+    let searchTerm = document.getElementById('searchInput').value.toLowerCase();
+
+    // Map search terms to specific URLs or sections on your site
+    const searchMapping = {
+        "home": "2101website.html",
+        "about": "about.html",
+        "services": "services.html",
+        "catalogue": "catalogue.html",
+        "contact": "contact.html",
+        // ... Add more terms and their respective URLs as needed
+    };
+
+    // Check if the search term exists in the mapping
+    if (searchMapping[searchTerm]) {
+        window.location.href = searchMapping[searchTerm];
+    } else {
+        // Default behavior if search term isn't found in the mapping
+        window.location.href = `pagenotfound.html?search=${searchTerm}`;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Your JS code will go here
     console.log("Document is fully loaded and parsed.");
-});
 
-document.addEventListener('DOMContentLoaded', function() {
+    // About link logic
     const aboutLink = document.getElementById('aboutLink');
-
     aboutLink.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevent the default behavior of the link
-        window.location.href = 'about.html';  // Redirect to the about.html page
+        event.preventDefault();
+        window.location.href = 'about.html';
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    const aboutLink = document.getElementById('servicesLink');
-
-    aboutLink.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevent the default behavior of the link
-        window.location.href = 'services.html';  // Redirect to the about.html page
+    // Home link logic (fixed the element reference)
+    const homeLink = document.getElementById('homeLink');
+    homeLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = '2101website.html';
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    const aboutLink = document.getElementById('catalogueLink');
-
-    aboutLink.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevent the default behavior of the link
-        window.location.href = 'catalogue.html';  // Redirect to the about.html page
+    // Services link logic
+    const servicesLink = document.getElementById('servicesLink');
+    servicesLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'services.html';
     });
-});
 
-document.addEventListener('DOMContentLoaded', function() {
-    const aboutLink = document.getElementById('contactLink');
-
-    aboutLink.addEventListener('click', function(event) {
-        event.preventDefault();  // Prevent the default behavior of the link
-        window.location.href = 'contact.html';  // Redirect to the about.html page
+    // Catalogue link logic
+    const catalogueLink = document.getElementById('catalogueLink');
+    catalogueLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'catalogue.html';
     });
+
+    // Contact link logic
+    const contactLink = document.getElementById('contactLink');
+    contactLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'contact.html';
+    });
+
+    const searchButton = document.querySelector('.search-bar button');
+    if (searchButton) {  // Ensure the search button is present on the page
+        searchButton.addEventListener('click', performSearch);
+    }
+
 });
