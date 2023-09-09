@@ -26,12 +26,19 @@
             <li><a href="services.html" id = "servicesLink">Services</a></li>
             <li><a href="catalogue.html" id = "catalogueLink">Catalogue</a></li>
             <li><a href="contact.html" id = "contactLink">Contact Us!</a></li>
-        </ul>
+            <div class="search-bar">
+                <script>
+                    function checkEnter(event) {
+                        if (event.key === "Enter") {
+                            performSearch();
+                        }
+                    }
+                </script>
 
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Search...">
-            <button onclick="performSearch()">Search</button>
-        </div>
+                <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
+                <button onclick="performSearch()">Search</button>
+            </div>
+        </ul>
     </nav>
 
     <!-- Main content section -->
