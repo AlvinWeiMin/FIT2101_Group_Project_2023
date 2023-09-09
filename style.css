@@ -1,41 +1,65 @@
+ .login-body, .signup-body{
+    background: blue;
+}
+.header-main {
 
-
+    background: #222;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: blue;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
 
 .topnavbar {
-    background: #222;
-
+    background: #f4f4f4;
 }
-.logo {
+.header-logo {
     float: left;
-
-
-}
-
-
-
-
-
-
-nav ul {
-    list-style-type: none;
+    width: fit-content;
+    
+    padding-right: 50px;
+    height: 100%;
     display: flex;
-    gap: 10px;
 }
-
-nav a {
+.header-logo img{
+    height: 100px;
+    padding: 0;
+}
+.header-nav ul{
+    list-style: none;
+    padding: 0;
+    
+}
+.header-nav ul li{
+    display : inline;
+    float: left;
+}
+.header-nav a{
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: 500;
     text-decoration: none;
-    color: #333;
-    padding: 5px 10px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: #333;
     color: #fff;
-}
+    margin-left:200px;
 
+}
+.header-nav a::before{
+    content: '';
+}
+.header-nav a:hover{
+    text-decoration: underline;
+}
+.search-bar{
+    position: fixed;
+    left: 250px;
+    padding: 0 150px;
+    height: 0;
+}
 /* from here is tom */
 .center {
     position:absolute;
@@ -55,12 +79,12 @@ nav a:hover {
     cursor:pointer;
     border-radius: 5px;
 }
-.center.popup {
+.popup {
     position: absolute;
-    top:-150%;
+    top:50%;
     left:50%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
     width: 380px;
     padding:  20px 30px;
     background: #fff;
@@ -71,16 +95,8 @@ nav a:hover {
         opacity 200ms ease-in-out 0ms,
         transform 20ms ease-in-out 0ms;
 }
-.center.popup.active{
 
-    top:50%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    transition: top 0ms ease-in-out 0ms,
-                opacity 200ms ease-in-out 0ms,
-                transform 20ms ease-in-out 0ms;
-}
-.center.popup .close-btn {
+.popup .close-btn {
 
     position: absolute;
     top: 10px;
@@ -94,21 +110,21 @@ nav a:hover {
     border-radius: 15px;
     cursor: pointer;
 }
-.center.form h2 {
+.form h2 {
     text-align: center;
     color: #222;
     margin: 10px 0px;
     font-size: 25px;
 }
-.center.form .form-element {
+.form .form-element {
 margin: 15px 0px;
 }
-.center.form .form-element label{
+.form .form-element label{
     font-size: 14px;
     color: #222;
 }
-.center.form .form-element input[type="text"],
-.center.form .form-element input[type="password"]{
+.form .form-element input[type="text"],
+.form .form-element input[type="password"]{
     margin-top: 5px;
     display: block;
     width: 100%;
@@ -117,10 +133,10 @@ margin: 15px 0px;
     border: 1px solid #aaa;
     border-radius: 5px;
 }
-.center.form .form-element input[type="checkbox"]{
+.form .form-element input[type="checkbox"]{
     margin-right: 5px;
 }
-.center.form .form-element button {
+.form .form-element button {
     width: 100%;
     height: 40px;
     border: none;
@@ -131,7 +147,7 @@ margin: 15px 0px;
     border-radius: 10px;
     cursor: pointer;
 }
-.center.form.form-element a {
+.form .form-element a {
     display:block;
     text-align: right;
     font-size:15px;
@@ -139,23 +155,23 @@ margin: 15px 0px;
     text-decoration : none;
     font-weight: 600;
 }
-.center.form.form-element a:hover {
+.form .form-element a:hover {
     text-decoration : underline;
 }
-.center.form.form-link {
+.form .form-link {
     text-align: center;
 }
-.center.form.form-link a,
-.center.form.form-link span{
+.form .form-link a,
+.form .form-link span{
     font-size:15px;
     color: #222;
     text-decoration : none;
     font-weight: 600;
 }
-.center.form.form-link a:hover {
+.form .form-link a:hover {
     text-decoration : underline;
 }
-.center.line {
+.line {
     position: relative;
     height: 1px;
     width: 100%;
@@ -163,7 +179,7 @@ margin: 15px 0px;
     background-color: #d4d4d4 ;
 
 }
-.center.media-options a{
+.media-options a{
 
     display: flex;
     
@@ -176,11 +192,11 @@ margin: 15px 0px;
     justify-content: center;
     text-decoration: none;
 }
-.center.a.gmail{
+a.gmail{
     background-color: #EA4335;
     color: #fff;
 }
-.center.signup-thing{
+.signup-thing{
     position: absolute;
     top:50%;
     left:50%;
