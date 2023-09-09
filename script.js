@@ -10,6 +10,8 @@ function performSearch() {
         "services": "services.html",
         "catalogue": "catalogue.html",
         "contact": "contact.html",
+        "new account": "registermewacc.html",
+        "register account": "registeraccount.html"
         // ... Add more terms and their respective URLs as needed
     };
 
@@ -46,12 +48,26 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = 'services.html';
     });
 
+    const accountRegLink = document.getElementById('accountRegLink');
+    accountRegLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'registeraccount.html';
+    });
+
+    // Services link logic
+    const accountNewRegLink = document.getElementById('accountNewRegLink');
+    accountNewRegLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'registernewacc.html';
+    });
+
     // Catalogue link logic
     const catalogueLink = document.getElementById('catalogueLink');
     catalogueLink.addEventListener('click', function(event) {
         event.preventDefault();
         window.location.href = 'catalogue.html';
     });
+
 
     // Contact link logic
     const contactLink = document.getElementById('contactLink');
@@ -68,3 +84,15 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.querySelector("#show-login").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+});
+
+document.querySelector(".popup .close-btn").addEventListener("click",function(){
+    document.querySelector(".popup").classList.remove("active");
+});
+
+
+document.querySelector(".popup .signup-link").addEventListener("click",function(){
+    document.querySelector(".popup").classList.add("active");
+});
