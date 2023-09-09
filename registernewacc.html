@@ -17,11 +17,14 @@
     <script src="script.js" defer></script>
 </head>
 
+<div class="signup-thing">
 <div class="center">
-<div class="popup">
-    <div class="close-btn">&times;</div>
     <div class="form">
-        <h2>Log in Here</h2>
+        <h2>Signup Here</h2>
+        <div class="form-element">
+            <label for="email">Email Address</label>
+            <input type="text" id="email" placeholder="Enter email here">
+        </div>
         <div class="form-element">
             <label for="username">Username</label>
             <input type="text" id="username" placeholder="Enter username here">
@@ -30,22 +33,17 @@
         <div class="form-element">
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter password">
-    
-    
+          
     </div>
     <div class="form-element">
         <input type="checkbox" id="remember-me">
         <label for="remember-me">Remember me</label>
     </div>
     <div class="form-element">
-        <button>Sign in</button>
-    </div>
-    <div class="form-element">
-        <a href="#">Forgot password?</a>
-        
-    </div>
-    <div class="form-element">
-        <a href="registeraccount.html"> Register Account</a>
+        <button>Sign up</button>
     </div>
 
+    <div class="form-link">
+         <span>Already Registered? <a href="loginpage.html" class="signup-link">Sign in</a></span>
+    </div>
 </div>
