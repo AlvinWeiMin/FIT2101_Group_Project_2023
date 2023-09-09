@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lean - Register an account</title>
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Link to external JS file -->
+    <script src="script.js" defer></script>
+</html>
+
+<body>
+    <h1>THE LEAN SIGNUP PAGE (EPIC)</h1><br>
+    
+    <label>Username</label><br>
+    <input oninput="i()" id="amogus" type="text" width="400" height="100"><br>
+    <label id="sus"></label>
+</body>
+
+<script>
+    function i() {
+        var a = document.getElementById("amogus").value;
+
+        if (a.length >= 10) {
+            document.getElementById("sus").innerHTML = "Username is too long.";
+        } else if (a.length <= 4) {
+            document.getElementById("sus").innerHTML = "Username is too short.";
+        } else {
+            document.getElementById("sus").innerHTML = "Username is valid.";
+        }
+    }
+</script>
