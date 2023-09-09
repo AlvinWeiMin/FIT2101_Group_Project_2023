@@ -1,41 +1,53 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <!-- Meta information for responsive design and charset -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- TITLE PAGE -->
-    <title>Lean - Login Page </title>
-    
+
+    <!-- Title of your website -->
+    <title>The Lean Ecommerce website</title>
+
     <!-- Link to external CSS file -->
-    <link> rel = "stylesheet" href="style.css"
-    
+    <link rel="stylesheet" href="style.css">
+
     <!-- Link to external JS file -->
     <script src="script.js" defer></script>
 </head>
 
-    <body>
-
-        <div class="container">
-            <h2>Login Here</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="submit">Login</button>
-            </form>
+<div class="center">
+<button id="show-login">Login</button>
+</div>
+<div class="popup">
+    <div class="close-btn">&times;</div>
+    <div class="form">
+        <h2>Log in Here</h2>
+        <div class="form-element">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter username here">
         </div>
-        <script src="script.js"><</script>
 
-    </body>
-</html>
+        <div class="form-element">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+    
+    
+    </div>
+    <div class="form-element">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">Remember me</label>
+    </div>
+    <div class="form-element">
+        <button>Sign in</button>
+    </div>
+    <div class="form-element">
+        <a href="#">Forgot password?</a>
+        
+    </div>
+    <div class="form-element">
+        <a href="registeraccount.html"> Register Account</a>
+    </div>
 
-            </div>
-
-
-    </body>
+</div>
