@@ -15,7 +15,7 @@ function writeUserData(inputUserId, inputUsername, inputEmail, inputPassword, in
     // Initialize Realtime Database and get a reference to the service
     const db = getDatabase(app);
 
-    set(ref(db, 'user/' + userId), {
+    set(ref(db, 'user/' + inputUserId), {
         username: inputUsername,
         email: inputEmail,
         password: inputPassword,
@@ -25,4 +25,8 @@ function writeUserData(inputUserId, inputUsername, inputEmail, inputPassword, in
 
     })
 
+}
+
+function readUserData() {
+    
 }
