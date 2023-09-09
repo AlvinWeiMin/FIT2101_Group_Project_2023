@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = 'services.html';
     });
 
-    const accountRegLink = document.getElementById('accountRegLink');
-    accountRegLink.addEventListener('click', function(event) {
+    const logInLink = document.getElementById('logInLink');
+    logInLink.addEventListener('click', function(event) {
         event.preventDefault();
-        window.location.href = 'registeraccount.html';
+        window.location.href = 'loginpage.html';
     });
 
     // Services link logic
