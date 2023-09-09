@@ -142,3 +142,44 @@ margin: 15px 0px;
     text-decoration : none;
     font-weight: 600;
 }
+.popup .form .form-element a:hover {
+    text-decoration : underline;
+}
+.popup .form .form-link {
+    text-align: center;
+}
+.popup .form .form-link a,
+.popup .form .form-link span{
+    font-size:15px;
+    color: #222;
+    text-decoration : none;
+    font-weight: 600;
+}
+.popup .form .form-link a:hover {
+    text-decoration : underline;
+}
+.popup .line {
+    position: relative;
+    height: 1px;
+    width: 100%;
+    margin: 36px 0;
+    background-color: #d4d4d4 ;
+
+}
+.popup .media-options a{
+
+    display: flex;
+    
+    position: relative;
+    height: 40px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+a.gmail{
+    background-color: #EA4335;
+    color: #fff;
+}
