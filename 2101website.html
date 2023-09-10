@@ -19,47 +19,63 @@
 
 
 <body>
+    <!-- Global Header -->
+    <header class="global-header">
+            <nav>
+                <ul>
+                    <a href="loginpage.html" id="logInLink">Login </a>
+                    <a href="registernewacc.html" id="accountNewRegLink">Register</a>
+                </ul>
+            </nav>
+    </header>
 
     <!-- Header section -->
     <header>
-        <h1>Product</h1>
-        <!-- put logo here -->
-        <img src="Lean-logos.jpeg" alt="logo" width="100" height="100">
+        <!-- Logo + Title -->
+        <div class = "logo-title">
+            <img class = "logo" src="Lean-logos.jpeg" alt="Lean Ecommerce Logo" width="100" height="100">
 
-    </header>
+            <!-- Website name -->
+            <h1>Lean <br> Ecommerce</h1>
+        </div>
 
-    <!-- Navigation bar -->
-    <nav>
-        <ul>
-            <li><a href="2101website.html" id = "homeLink">Home</a></li>
-            <li><a href="about.html" id = "aboutLink">About</a></li>
-            <li><a href="services.html" id = "servicesLink">Services</a></li>
-            <li><a href="catalogue.html" id = "catalogueLink">Catalogue</a></li>
-            <li><a href="contact.html" id = "contactLink">Contact Us!</a></li>
-            <div class="search-bar">
-                <script>
-                    function checkEnter(event) {
-                        if (event.key === "Enter") {
-                            performSearch();
-                        }
+        <!-- Navigation bar -->
+        <nav>
+            <ul>
+                <a href="2101website.html" id = "homeLink">Home</a>
+                <a href="about.html" id = "aboutLink">About</a>
+                <a href="services.html" id = "servicesLink">Services</a>
+                <a href="catalogue.html" id = "catalogueLink">Catalogue</a>
+                <a href="contact.html" id = "contactLink">Contact Us!</a>
+            </ul>
+        </nav>
+
+        <!-- Search bar -->
+        <div class="search-bar">
+            <script>
+                function checkEnter(event) {
+                    if (event.key === "Enter") {
+                        performSearch();
                     }
-                </script>
+                }
+            </script>
 
-                <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
-                <button onclick="performSearch()">Search</button>
-            </div>
-        </ul>
-    </nav>
+            <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
+            <button onclick="performSearch()">Search</button>
+        </div>
+
+</header>
 
     <!-- Main content section -->
     <main>
-        <section>
+        <section class = "section1">
             <h2>Website </h2>
-            <p>This is a sample paragraph for this section.</p>
+            <p>Welcome to Lean Ecommerce</p>
         </section>
-        <section>
-            <h2>Sample 2 </h2>
-            <p>This is another sample paragraph for this section.</p>
+
+        <section class = section2>
+            <h2>Our Services </h2>
+            <p>We offer Ecommerce</p>
         </section>
         
     </main>
@@ -68,14 +84,6 @@
     <footer>
         <p>&copy; 2023 Lean -> Team36. All rights reserved.</p><!--this is our team name which we decided and the team name the faculty has allocated.-->
     </footer>
-
-    <nav>
-        <ul>
-            <h1>This is the quick links to look over the pages.</h1>
-            <li><a href = "loginpage.html" id = "logInLink">Account</a>
-            <li><a href = "registernewacc.html" id = "accountNewRegLink">New Account</li>
-        </ul>
-    </nav>
 
 </body>
 
