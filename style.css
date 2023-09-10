@@ -7,10 +7,9 @@ body, h1, h2, p, ul, li {
 
 body {
     font-family: Arial, sans-serif;/*this is the font of what we are using in the webpag\*/
-    background: rgba(255, 255, 255, 0.52);
+    background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(11.8px);
     -webkit-backdrop-filter: blur(11.8px);
-
 }
 
 main {
@@ -27,35 +26,8 @@ footer {
     text-align: center;
 }
 
-/* Global Header */
 
-/* Global Header Styles */
-.global-header {
-    display: flex;
-    flex-direction: row;
-    color: #fff; /* Text color for the links */
-    padding: 10px 0; /* Adjust the padding as needed */
-    text-align: right; /* Center-align the content */
-}
-
-.global-header nav ul {
-    list-style-type: none;
-}
-
-.global-header nav ul li:last-child {
-    margin-right: 0; /* Remove margin from the last link */
-}
-
-.global-header nav a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold; /* Make the links bold */
-    font-size: 16px; /* Adjust the font size as needed */
-}
-
-
-
-/* Header Section Home Page */
+/* Header Section */
 
 header {
     align-items:center;
@@ -65,55 +37,8 @@ header {
     margin: 20px;
     padding: 20px; 
     border-radius: 20px;
-}
-
-
-/* Logo + Title */
-/* Div that holds logo and title next to it */
-.logo-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.logo {
-    width: 100px;
-    height: 100px;
-    margin: 0;
-}
-
-header h1 {
-    font-size: 30px;
-    font-weight: 600;
-    color: #333;
-    padding-left: 15px;
-}
-
-/*Navigation bar*/
-
-nav {
-    text-align: right;
-    margin: 30px;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    gap: 15px;
-}
-
-
-nav a {
-    text-decoration: none;
-    display: inline; /* Display the login and register links inline */
-    margin-right: 20px; /* Adjust the spacing between links */
-    font-family: inherit;
-    font-size: 18px;
     background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+    opacity: 0.8;
     color: white;
     padding: 0.8em 1.2em;
     display: flex;
@@ -125,17 +50,98 @@ nav a {
     transition: all 0.3s;
 }
 
+
+/* Logo + Title */
+/* Div that holds logo and title next to it */
+.logo-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-left: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin-left: 100px;
+}
+
+header h1 {
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 550;
+    color: #f0eded;
+    padding-left: 15px;
+}
+
+/*Navigation bar*/
+
+nav {
+    text-align: right;
+    margin: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline; /* Display the login and register links inline */
+    margin-right: 20px; /* Adjust the spacing between links */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    display: inline; /* Display the login and register links inline */
+    margin-right: 20px; /* Adjust the spacing between links */
+    font-family: inherit;
+    font-size: 18px;
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s;
+}
+
 nav a:hover {
     transform: translateY(-3px);
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   }
   
-
 .navbuttons {
     text-align: center;
     font-size: 10px;
     margin: 10px;
-    padding: 5px 10px;
+    padding: 5px 5px;
+}
+
+.nav-catalogue {
+    text-decoration: none;
+    display: inline; /* Display the login and register links inline */
+    margin-right: 20px; /* Adjust the spacing between links */
+    font-family: inherit;
+    font-size: 18px;
+    color: white;
+    padding: 0.8em 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 25px;
+    transition: all 0.3s;
+
 }
 
 
@@ -149,31 +155,53 @@ nav a:hover {
 #searchInput {
     padding: 5px;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 10px;
     margin-right: 5px;
 }
 
+.search-button {
+    padding: 10px 15px;
+    border: 0px solid #ffffff;
+    border-radius: 10px;
+    background-color: #3294e5;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-/* Registration/Login */
+/* Account stuff */
 
 .account {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 20px;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px 10px;
 }
 
-.account a {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 7px 15px;
-    background-color: #3294e5;
-    border-radius: 5px;
+.login {
+    padding: 10px 10px;
+    text-align: center;
+    border: 0px solid #ffffff;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(11.8px);
+    cursor: pointer;
     transition: background-color 0.3s;
 }
 
+.signup {
+    padding: 10px 10px;
+    text-align: center;
+    border: 0px solid #ffffff;
+    border-radius: 20px;
+    background: rgba(88, 84, 84, 0.5);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(11.8px);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
 /* Homepage Sections*/
 
@@ -184,7 +212,9 @@ nav a:hover {
     backdrop-filter: blur(11.8px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 20px
+    padding: 20px;
+    margin: 20px;
+
 }
 
 
@@ -195,7 +225,8 @@ nav a:hover {
     backdrop-filter: blur(11.8px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 20px
+    padding: 20px;
+    margin: 20px;
 }
 
 
