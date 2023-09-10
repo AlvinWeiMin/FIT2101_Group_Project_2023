@@ -209,3 +209,40 @@ a.gmail{
     box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
     border-radius: 10px;
 }
+
+/* domico stuff */
+.form .form-element a[type="smalltext"],
+.form .form-element p[type="smalltext"]{
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+}
+.form .form-element a[type="smallhyperlink"] {
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+    color: blue;
+}
+.form .form-element a:visited[type="smallhyperlink"] {
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+    color: purple;
+}
+.form .form-element p[type="angrysmalltext"]{
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+    color: red;
+}
+.form .form-element p[type="happysmalltext"]{
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+    color: green;
+}
