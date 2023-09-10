@@ -16,7 +16,7 @@
     <!-- Link to external JS file -->
     <script src="script.js" defer></script>
 </head>
-
+<body class="signup-body">
 <div class="signup-thing">
 <div class="center">
     <div class="form">
@@ -40,10 +40,12 @@
         <label for="remember-me">Remember me</label>
     </div>
     <div class="form-element">
-        <button>Sign up</button>
+        <button onclick="login()">Sign in</button>
+        <p id="failedlogin" type="angrysmalltext"></p><p id="successfullogin" type="happysmalltext"></p>
     </div>
 
     <div class="form-link">
          <span>Already Registered? <a href="loginpage.html" class="signup-link">Sign in</a></span>
     </div>
 </div>
+</body>

@@ -1,9 +1,7 @@
-
-/* Resetting some default styles */
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
+ .login-body, .signup-body{
+    background: blue;
 }
+.header-main {
 
 body {
     font-family: Arial, sans-serif;/*this is the font of what we are using in the webpag\*/
@@ -91,12 +89,13 @@ nav {
     justify-content: center;
     transition: all 0.3s;
 }
-
-
-nav ul {
-    list-style-type: none;
+.header-logo {
+    float: left;
+    width: fit-content;
+    
+    padding-right: 50px;
+    height: 100%;
     display: flex;
-    gap: 10px;
 }
 
 nav a {
@@ -202,6 +201,13 @@ nav a:hover {
     cursor: pointer;
     transition: background-color 0.3s;
 }
+.header-nav a{
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    margin-left:200px;
 
 /* Homepage Sections*/
 
@@ -251,10 +257,10 @@ nav a:hover {
 }
 .popup {
     position: absolute;
-    top:-150%;
+    top:50%;
     left:50%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
     width: 380px;
     padding:  20px 30px;
     background: #fff;
@@ -265,15 +271,7 @@ nav a:hover {
         opacity 200ms ease-in-out 0ms,
         transform 20ms ease-in-out 0ms;
 }
-.popup.active{
 
-    top:50%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    transition: top 0ms ease-in-out 0ms,
-                opacity 200ms ease-in-out 0ms,
-                transform 20ms ease-in-out 0ms;
-}
 .popup .close-btn {
 
     position: absolute;
@@ -386,4 +384,41 @@ a.gmail{
     background: #fff;
     box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
     border-radius: 10px;
+}
+
+/* domico stuff */
+.form .form-element a[type="smalltext"],
+.form .form-element p[type="smalltext"]{
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+}
+.form .form-element a[type="smallhyperlink"] {
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+    color: blue;
+}
+.form .form-element a:visited[type="smallhyperlink"] {
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+    color: purple;
+}
+.form .form-element p[type="angrysmalltext"]{
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+    color: red;
+}
+.form .form-element p[type="happysmalltext"]{
+    display: inline;
+    text-align: left;
+    font-size: 8px;
+    font-weight: normal;
+    color: green;
 }

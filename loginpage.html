@@ -16,12 +16,10 @@
     <!-- Link to external JS file -->
     <script src="script.js" defer></script>
 </head>
-
+<body class="login-body">
 <div class="center">
-<button id="show-login">Login</button>
 </div>
 <div class="popup">
-    <div class="close-btn">&times;</div>
     <div class="form">
         <h2>Login Here</h2>
         <div class="form-element">
@@ -43,7 +41,8 @@
         <label for="remember-me">Remember me</label>
     </div>
     <div class="form-element">
-        <button>Sign in</button>
+        <button onclick="login()">Sign in</button>
+        <p id="failedlogin" type="angrysmalltext"></p><p id="successfullogin" type="happysmalltext"></p>
     </div>
 
     <div class="form-link">
@@ -60,4 +59,4 @@
     </div>
 
 </div>
-
+</body>
