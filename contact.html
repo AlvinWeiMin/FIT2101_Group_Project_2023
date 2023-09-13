@@ -48,7 +48,38 @@
             <p>lean_ecommerce@gmail.com</p>
             <h3>Phone</h3>
             <p>0405 697 867</p>
-            <h3>Our Contact Form <br>[embed contact form below]</br></h3>
+            
+            <div class="container-popup">
+                <form name="contact-form">
+                <label for="fname">First Name: </label>
+                <input type="text" id="fname" name="firstname" placeholder="First name here...">
+
+                <label for="lname">Last Name: </label>
+                <input type="text" id="lname" name="lname" placeholder="Last name here...">
+
+                <label for="region">Region</label>
+                <select id="region" name="region">
+                    <option value="melbourne">Melbourne</option>
+                    <option value="sydney">Sydney</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                    <option value="general">General</option>
+                    <option value="shipping">Shipping</option>
+                </select>
+            
+                <label for="subject-text">Subject</label>
+                <textarea id="subject-text" placeholder="Write something.." style="height:200px"></textarea>
+                <input type="submit" value="Submit">
+                
+                </form>
+                </div>
+
+            
+
+            
+            </div>
             <h4>name: </h4>
             <p>what is your name</p><!--we need to have a text box field for people to fill out for these specific categories.-->
             <h4>email: </h4>
