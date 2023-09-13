@@ -22,52 +22,33 @@
 
 
 <body>
-
-
     <!-- Header section -->
-    <header class="header-main">
-        <!-- <h1>Product</h1> -->
-        <!-- put logo here -->
-            <div class="header-logo">
-            <img src="Lean-logos.jpeg" alt="logo" width="100" height="100" class="header-logo">
-            <nav class="header-nav">
-                <ul>
-                    
-                    
-                    <li><a href="2101website.html" id = "homeLink">Home</a></li>
-                    <li><a href="about.html" id = "aboutLink">About</a></li>
-                    <li><a href="services.html" id = "servicesLink">Services</a></li>
-                    <li><a href="catalogue.html" id = "catalogueLink">Catalogue</a></li>
-                    <li><a href="contact.html" id = "contactLink">Contact Us!</a></li>
-                    <li><a href="loginpage.html" id="show-login">Login</a></li>
-                </ul>
-            </div>
+    <header>
+        <!-- Logo + Title -->
+        <div class = "logo-title">
+            <img class = "logo" src="money-dynamic-gradient.png" alt="Lean Ecommerce Logo" width="100" height="100">
 
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search...">
-                <button onclick="performSearch()">Search</button>
-                </div>
-            
-        </nav>
-        
-    </header>
+            <!-- Website name -->
+            <h1>Lean <br> Ecommerce</h1>
+        </div>
 
-    <!-- Navigation bar --> <!--this is the previous code of the nav bar we were using it has been moved to the header but retains its features-->
-        
-        <!-- <ul>
-            <li><a href="2101website.html" id = "homeLink">Home</a></li>
-            <li><a href="about.html" id = "aboutLink">About</a></li>
-            <li><a href="services.html" id = "servicesLink">Services</a></li>
-            <li><a href="catalogue.html" id = "catalogueLink">Catalogue</a></li>
-            <li><a href="contact.html" id = "contactLink">Contact Us!</a></li>
-            <div class="search-bar">
-                <script>
-                    function checkEnter(event) {
-                        if (event.key === "Enter") {
-                            performSearch();
-                        }
+        <!-- Navigation bar -->
+        <nav>
+                <a href="2101website.html" id = "homeLink">Home</a>
+                <a href="about.html" id = "aboutLink">About</a>
+                <a href="services.html" id = "servicesLink">Services</a>
+                <a href="catalogue.html" id = "catalogueLink">Catalogue</a>
+                <a href="contact.html" id = "contactLink">Contact</a>
+
+        <!-- Search bar -->
+        <div class="search-bar">
+            <script>
+                function checkEnter(event) {
+                    if (event.key === "Enter") {
+                        performSearch();
                     }
-                </script>
+                }
+            </script>
 
             <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
             <button class = "search-button onclick="performSearch()">Search
@@ -89,10 +70,7 @@
 
     <!-- Main content section -->
     <main>
-        <section>    
-
-    </section>
-        <section>
+        <section class = "sectionhome">
             <h2>Website </h2>
             <p>Welcome to Lean Ecommerce<br></b></p>
             <h2><br></b>Our Services </h2>

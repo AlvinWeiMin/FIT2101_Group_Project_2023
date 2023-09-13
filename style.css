@@ -1,66 +1,245 @@
- .login-body, .signup-body{
-    background: blue;
-}
-.header-main {
+/* Please follow this format when writing CSS */
 
-    background: #222;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 100px;
-    background: blue;
-    align-items: center;
+/* Alignment */
+/* Box */
+/* Text */
+/* Background */
+/* Not Sure */
+
+
+body {
+    font-family: Arial, sans-serif;/*this is the font of what we are using in the webpag\*/
+    background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+    opacity: 0.8;
+    color: white;   
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+footer {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/* Header Section */
+
+header {
+
+     /* Alignment */
+    align-items:center;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
+
+     /* Box */
+    padding: 10px;
+    border: none;
+    border-radius: 50px;
+    margin: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Text */
+    color: white;
+
+    /* Background */
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 1;
+
+    /* Not Sure */
+    transition: all 0.3s;
 }
 
-.topnavbar {
-    background: #f4f4f4;
-}
-.header-logo {
-    float: left;
-    width: fit-content;
-    
-    padding-right: 50px;
-    height: 100%;
+
+/*Logo + Title */
+.logo-title {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.header-logo img{
-    height: 100px;
-    padding: 0;
-}
-.header-nav ul{
-    list-style: none;
-    padding: 0;
-    
-}
-.header-nav ul li{
-    display : inline;
-    float: left;
-}
-.header-nav a{
-    padding: 0 10px;
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    color: #fff;
-    margin-left:200px;
 
+/*Logo */
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
 }
-.header-nav a::before{
-    content: '';
+
+
+/*Title */
+header h1 {
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 550;
+    color: #0b0a0ae4;
+    padding-left: 15px;
 }
-.header-nav a:hover{
-    text-decoration: underline;
+
+/*Navigation bar*/
+
+nav {
+    /* Alignment */
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+     /* Box */
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 30px;
+    margin-right: 20px; /* Adjust the spacing between links */
+
+    /* Not Sure */
+    transition: all 0.3s;
 }
-.search-bar{
-    position: fixed;
-    left: 250px;
-    padding: 0 150px;
-    height: 0;
+
+
+nav a {
+    /* Alignment */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+
+    /* Box */
+    padding: 0.8em 1.2em;
+    border: none;
+    border-radius: 25px;
+    margin-right: 20px;
+
+    /* Text */
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(33, 34, 34);
+    text-decoration: none;
+
+    /* Not Sure */
+    transition: all 0.3s;
 }
+
+nav a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  }
+  
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center; 
+}
+
+#searchInput {
+    padding: 5px;
+    border: 3px solid #ffffff;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.search-button {
+    padding: 10px 15px;
+    border: 0px solid #ffffff;
+    border-radius: 10px;
+    background-color: #3294e5;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Login/Signup */
+
+.account {
+    /* Alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Box */
+    gap: 10px;
+    padding: 5px 10px;
+}
+
+.login {
+    /* Alignment */
+    text-align: center;
+    display: flex;
+
+    /* Box */
+    padding: 10px 10px;
+    border: 0px solid #ffffff;
+    border-radius: 20px;
+    
+    /* Background */
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(11.8px);
+   
+    /* Movement? */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup {
+    /* Alignment */
+    text-align: center;
+
+    /* Box */
+    padding: 10px 10px;
+    border: 0px solid #ffffff;
+    border-radius: 20px;
+
+    /* Background */
+    background: rgba(88, 84, 84, 0.5);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(11.8px);
+    
+    /* Movement? */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+
+/* HomePage Sections*/
+
+.sectionhome {
+    /* Alignment */
+    text-align: left;;
+
+    /* Box */
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.436);
+
+    /* Text */
+    color: rgb(76, 75, 75);
+
+    /* Background */
+    background: rgba(255, 255, 255, 0.89);
+    backdrop-filter: blur(11.8px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
 /* from here is tom */
+
+.login-body, .signup-body{
+    background: blue;
+}
+
+
 .center {
     position:absolute;
     top:50%;
