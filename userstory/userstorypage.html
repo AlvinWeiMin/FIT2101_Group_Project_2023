@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Meta information for responsive design and charset -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- Title of your website -->
+        <title>Lean Project Management</title>
+    
+        <!-- Link to external CSS file -->
+        <link rel="stylesheet" href="userstorystyle.css">
+    
+        <!-- Link to external JS file -->
+        <script src="userstoryscript.js" defer></script>
+    
+        <!-- Firebase Script-->
+        <script type="module" src="firebase.js"></script>
+    </head>
+    
+
+<body>
+  <h1>Create User Story</h1>
+  <form id="userStoryForm">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" required><br>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description"></textarea><br>
+
+    <label for="epic">Epic:</label>
+    <select id="epic" name="epic" required>
+    <option value="Epic0">None</option>
+    <option value="Epic1">Epic 1</option>
+    <option value="Epic2">Epic 2</option>
+    <option value="Epic3">Epic 3</option>
+    </select><br>
+
+    <label for="estimate">Estimate:</label>
+    <input type="number" id="estimate" name="estimate" required><br>
+
+    <input type="submit" value="Create User Story">
+
+    <label for="assigned-to">Assigned to:</label>
+    <select id="assigned-to" name="assigned-to" required>
+    <option value="assignee-0">None</option>
+    <option value="assignee-1">John</option>
+    <option value="assignee-2">Sarah</option>
+    <option value="assignee-3">Paul</option>
+    </select><br>
+
+
+
+
+  </form>
+
+  <h2>Backlog</h2>
+  <ul id="backlogList"></ul>
+
+
+</body>
+</html>
