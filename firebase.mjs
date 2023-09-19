@@ -1,6 +1,6 @@
 // Import
-import firebase from "firebase/app";
-import "firebase/compat/database";
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 const DEFAULT_POSTAL_ADDRESS = "-";
 const DEFAULT_DATE_OF_BIRTH = "01/01/2023";
@@ -123,4 +123,4 @@ function readUserData(inputUserId) {
     return returnVal
 }
 
-print(createNewUserId());
+console.log(createNewUserId());
