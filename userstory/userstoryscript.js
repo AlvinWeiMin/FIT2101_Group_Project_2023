@@ -23,20 +23,7 @@ const firebaseConfig = {
 const userStoryForm = document.getElementById('userStoryForm');
 
 
-// document.getElementById("submituserstory").addEventListener('click' , function(e){
-//   e.preventDefault();
-//   set(ref(db , 'userstories/' ),
-//   {
-//     title : document.getElementById('title').value,
-//     desc : document.getElementById('description').value,
-//     epic : document.getElementById('epic').value,
-//     estimate : document.getElementById('estimate').value,
-//     assignee : document.getElementById('assigned-to').value
-
-
-//   })
-
-// })
+// CREATING A USER STORY
 document.addEventListener("DOMContentLoaded", function() {
   const userStoryForm = document.getElementById('userStoryForm');
 
@@ -74,9 +61,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+ // DISPLAYING USER STORIES
 var tbody = document.getElementById('backlogbody');
-
-
 
 function AddStoryToTable(title, desc, epic, estimate , assignee){
   
