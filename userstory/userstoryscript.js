@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-  import { getDatabase, ref, set, get, child, push , onValue} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+  import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -43,11 +43,10 @@ document.addEventListener("DOMContentLoaded", function() {
   function createStory(storynum , title, description, epic, estimate, assignee) {
     // Your code to save the user story to Firebase here
 
-    const userStoryRef =  ref(db, 'userstories');
-    const newUserStory = push(userStoryRef);
+    const userStoryRef =  ref(db, 'userstories/' + storynum);
 
 
-    set(newUserStory, {
+    set(userStoryRef, {
       storynum : storynum,
       title: title,
       desc: description,
@@ -101,6 +100,8 @@ function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
 
 function AddAllItemsToTable(story){
   tbody.innerHTML = "";
+  
+  
   story.forEach(element => {
     AddStoryToTable(element.storynum , element.title , element.desc , element.epic , element.estimate , element.assignee);
   })
@@ -108,8 +109,8 @@ function AddAllItemsToTable(story){
 }
 
 function SelectAllData(){
-
-  const dbRef = ref(db ,  "userstories");
+  const dbRef = query(ref(db, "userstories"), orderByKey());
+  //const dbRef = ref(db ,  "userstories");
 
   onValue(dbRef, (snapshot) => {
 
