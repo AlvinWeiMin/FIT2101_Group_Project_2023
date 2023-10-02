@@ -62,12 +62,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
 var storyId = 0;
 var storyList = [];
  // DISPLAYING USER STORIES
 var tbody = document.getElementById('backlogbody');
-var sprintbody = document.getElementById('sprintbody')
+var sbody = document.getElementById('sprintbody')
+
 function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
   
 
@@ -80,9 +80,9 @@ function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
   let td4 = document.createElement('td');
   let td5 = document.createElement('td');
   
-  storyList.push([title,desc,epic,estimate,assignee])
+  storyList.push([storynum, title,desc,epic,estimate,assignee])
   td0.innerHTML = storynum;
-  td1.innerHTML = title;
+  td1.innerHTML = title;  
   td2.innerHTML = desc;
   td3.innerHTML = epic;
   td4.innerHTML = estimate;
@@ -92,8 +92,8 @@ function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
   
 
   var ControlDiv = document.createElement("div")
-  ControlDiv.innerHTML = '<button type="button" class="btn-usr-story"  data-toggle="modal" data-target="#examplemodalcentre" onclick="AddStoryToSprint('+storynum+')">Add To Sprint</button>'
-  ControlDiv.innerHTML += '<button type="button" class="btn-usr-story" onclick="DeleteStory(null)">Delete</button> '
+  ControlDiv.innerHTML = '<button type=button" class="btn-usr-story"  data-toggle="modal" data-target="#examplemodalcentre" onclick="AddStoryToSprint('+ (storyList.length -1) +')">Add To Sprint</button>'
+  ControlDiv.innerHTML += '<button type="button" class="btn-del-story" onclick="TestingStuff()">DeleteStory</button>'
 
   trow.appendChild(ControlDiv);
   tbody.appendChild(trow)
@@ -125,31 +125,29 @@ function SelectAllData(){
   })
 
 }
+
+document.AddStoryToSprint = function(storynum){
+  console.log("TEST");
+  let trow2 = document.createElement('tr');
+
+  let td0 = document.createElement('td');
+  let td1 = document.createElement('td');
+  let td2 = document.createElement('td');
+  let td3 = document.createElement('td');
+  let td4 = document.createElement('td');
+  let td5 = document.createElement('td');
+
+  td0.innerHTML = storyList[storynum][0];
+  td1.innerHTML = storyList[storynum][1];
+  td2.innerHTML = storyList[storynum][2];
+  td3.innerHTML = storyList[storynum][3];
+  td4.innerHTML = storyList[storynum][4];
+  td5.innerHTML = storyList[storynum][5];
+
+  trow2.appendChild(td0); trow2.appendChild(td1); trow2.appendChild(td2); trow2.appendChild(td3); trow2.appendChild(td4); trow2.appendChild(td5);
+
+  sbody.appendChild(trow2);
+}
+
+
 window.onload = SelectAllData;
-
-
-  function AddStoryToSprint(storynum){
-
-    let trow2 = document.createElement('tr');
-  
-    let td0 = document.createElement('td');
-    let td1 = document.createElement('td');
-    let td2 = document.createElement('td');
-    let td3 = document.createElement('td');
-    let td4 = document.createElement('td');
-    let td5 = document.createElement('td');
-    
-    storyList.push([title,desc,epic,estimate,assignee])
-    td0.innerHTML = storynum;
-    td1.innerHTML = title;
-    td2.innerHTML = desc;
-    td3.innerHTML = epic;
-    td4.innerHTML = estimate;
-    td5.innerHTML = assignee;
-  
-    trow2.appendChild(td0); trow2.appendChild(td1); trow2.appendChild(td2); trow2.appendChild(td3); trow2.appendChild(td4); trow2.appendChild(td5);
-  
-    trow2.appendChild(ControlDiv);
-    sprintbody.appendChild(trow2)
-  }
-  
