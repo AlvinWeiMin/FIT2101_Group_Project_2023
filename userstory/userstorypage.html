@@ -29,6 +29,9 @@
   <h1>Create User Story</h1>
   <div class="userstorycontainer">
   <form id="userStoryForm">
+    <label for="storynum">Story Number:</label>
+    <input type="text" id="storynum" name="storynum" required><br>
+
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" required><br>
 
@@ -57,6 +60,7 @@
     
     <div class="inputbox">
     <button type="submit" id="submituserstory"  value="Create User Story">Create User Story</button>
+    <button type="button" class="btn-usr-story" onclick="UpdateStory(getElementById('storynum').value)">Update</button> 
     </div>
 
 
@@ -70,21 +74,24 @@
   
   <table id="backlogList">
   <thead>
+    <th>ID</th>
     <th>Title</th>
     <th>Description</th>
     <th>Epic</th>
     <th>Estimate</th>
     <th>Assignee</th>
+    <th>Status</th>
   </thead>
 
   <tbody id="backlogbody">
 
     <tr> 
-      <td> t </td>
-      <td>  1</td>
-      <td> 1 </td>
-      <td> 1 </td>
-      <td> 1 </td>
+      <td> </td>
+      <td>  </td>
+      <td>  </td>
+      <td>  </td>
+      <td> </td>
+      <td> </td>
     </tr>
 
 

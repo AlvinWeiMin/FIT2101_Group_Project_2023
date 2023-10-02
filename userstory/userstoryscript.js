@@ -21,7 +21,7 @@ const firebaseConfig = {
   const db = getDatabase(app);
   
 const userStoryForm = document.getElementById('userStoryForm');
-
+var storyid = 0
 
 // CREATING A USER STORY
 document.addEventListener("DOMContentLoaded", function() {
@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
 
     createStory(
+      document.getElementById('storynum').value,
       document.getElementById('title').value,
       document.getElementById('description').value,
       document.getElementById('epic').value,
@@ -39,14 +40,15 @@ document.addEventListener("DOMContentLoaded", function() {
     );
   });
 
-  function createStory(title, description, epic, estimate, assignee) {
+  function createStory(storynum , title, description, epic, estimate, assignee) {
     // Your code to save the user story to Firebase here
 
-    const userStoryRef =  ref(db, 'userstories/');
+    const userStoryRef =  ref(db, 'userstories');
     const newUserStory = push(userStoryRef);
 
 
     set(newUserStory, {
+      storynum : storynum,
       title: title,
       desc: description,
       epic: epic,
@@ -61,37 +63,48 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
+var storyId = 0;
+var storyList = [];
  // DISPLAYING USER STORIES
 var tbody = document.getElementById('backlogbody');
-
-function AddStoryToTable(title, desc, epic, estimate , assignee){
+var sprintbody = document.getElementById('sprintbody')
+function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
   
 
   let trow = document.createElement('tr');
 
+  let td0 = document.createElement('td');
   let td1 = document.createElement('td');
   let td2 = document.createElement('td');
   let td3 = document.createElement('td');
   let td4 = document.createElement('td');
   let td5 = document.createElement('td');
-
+  
+  storyList.push([title,desc,epic,estimate,assignee])
+  td0.innerHTML = storynum;
   td1.innerHTML = title;
   td2.innerHTML = desc;
   td3.innerHTML = epic;
   td4.innerHTML = estimate;
   td5.innerHTML = assignee;
 
-  trow.appendChild(td1); trow.appendChild(td2); trow.appendChild(td3); trow.appendChild(td4); trow.appendChild(td5);
+  trow.appendChild(td0); trow.appendChild(td1); trow.appendChild(td2); trow.appendChild(td3); trow.appendChild(td4); trow.appendChild(td5);
+  
+
+  var ControlDiv = document.createElement("div")
+  ControlDiv.innerHTML = '<button type="button" class="btn-usr-story"  data-toggle="modal" data-target="#examplemodalcentre" onclick="AddStoryToSprint('+storynum+')">Add To Sprint</button>'
+  ControlDiv.innerHTML += '<button type="button" class="btn-usr-story" onclick="DeleteStory(null)">Delete</button> '
+
+  trow.appendChild(ControlDiv);
   tbody.appendChild(trow)
 }
 
 function AddAllItemsToTable(story){
-  
-  //tbody.innerHTML = "";
+  tbody.innerHTML = "";
   story.forEach(element => {
-    AddStoryToTable(element.title , element.desc , element.epic , element.estimate , element.assignee);
+    AddStoryToTable(element.storynum , element.title , element.desc , element.epic , element.estimate , element.assignee);
   })
+  
 }
 
 function SelectAllData(){
@@ -113,3 +126,30 @@ function SelectAllData(){
 
 }
 window.onload = SelectAllData;
+
+
+  function AddStoryToSprint(storynum){
+
+    let trow2 = document.createElement('tr');
+  
+    let td0 = document.createElement('td');
+    let td1 = document.createElement('td');
+    let td2 = document.createElement('td');
+    let td3 = document.createElement('td');
+    let td4 = document.createElement('td');
+    let td5 = document.createElement('td');
+    
+    storyList.push([title,desc,epic,estimate,assignee])
+    td0.innerHTML = storynum;
+    td1.innerHTML = title;
+    td2.innerHTML = desc;
+    td3.innerHTML = epic;
+    td4.innerHTML = estimate;
+    td5.innerHTML = assignee;
+  
+    trow2.appendChild(td0); trow2.appendChild(td1); trow2.appendChild(td2); trow2.appendChild(td3); trow2.appendChild(td4); trow2.appendChild(td5);
+  
+    trow2.appendChild(ControlDiv);
+    sprintbody.appendChild(trow2)
+  }
+  
