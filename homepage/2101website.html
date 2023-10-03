@@ -1,0 +1,76 @@
+<body>
+    <!-- Header section -->
+    <header>
+        <!-- Logo -->
+        <div class = "logo">
+            <img  class = "logo" src="new lean logo.png" alt="Lean Ecommerce Logo">
+        </div>
+
+        <!-- Navbar -->
+        <nav>
+                <a href="about.html" id = "aboutLink"> About</a>
+                <a href="services.html" id = "servicesLink">Services</a>
+                <a href="catalogue.html" id = "catalogueLink">Catalogue</a>
+                <a href="contact.html" id = "contactLink">Contact</a>
+
+        </nav>
+
+        <!-- Search + Signup -->
+        <div class = "search-signup">
+            <!-- Search bar -->
+            <div class="search-bar">
+                <script>
+                    function checkEnter(event) {
+                        if (event.key === "Enter") {
+                            performSearch();
+                        }
+                    }
+                </script>
+                <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
+                <button class="search-button" onclick="performSearch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L19.49 20l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </div>
+            <!-- Sign-in -->
+                <div class = signin-button>
+                    <a href="../accounthandler/loginpage.html" id="logInLink">Sign-in</a>
+                </div>
+            </div>
+        </div>
+
+</header>
+
+    <!-- Main content section -->
+    <main>
+        <div class = box-row>
+            <div class = "box-container">
+                <h2>User Stories</h2>
+            </div>
+
+            <div class = "box-container">
+                <h2>Kanban Board </h2>
+            </div>
+
+            <div class = "box-container">
+                <h2>Burndown Chart</h2>
+            </div>
+        </div>
+
+        <div class = box-row>
+            <div class = "box-container">
+                <h2>Product Backlog</h2>
+            </div>
+
+            <div class = "box-container">
+                <h2>Our Services </h2>
+            </div>
+
+            <div class = "box-container">
+                <h2>Our Services </h2>
+            </div>
+        </div>
+        </div>
+        
+    </main>
