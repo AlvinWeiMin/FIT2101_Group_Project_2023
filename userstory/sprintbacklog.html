@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Meta information for responsive design and charset -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <!-- Title of your website -->
+        <title>Lean Project Management</title>
+    
+        <!-- Link to external CSS file -->
+        <link rel="stylesheet" href="userstorystyle.css">
+    
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+    <!-- Your custom JavaScript file -->
+    <script src="sprintstoryscript.js" type="module" defer></script>
+</head>
+
+
+
+
+
+
+
+<body>
+<h1>Sprint Backlog</h1>
+
+<div class="popup" id="popup">
+  <h1 id="story-status-header">Edit Status:</h1>
+  
+  <select id="story-status-val" name="story-status" required>
+  <option value="To Do">To Do</option>
+  <option value="In Progress">In Progress</option>
+  <option value="Completed">Completed</option>
+  </select>
+
+  <button type="submit" onclick="closePopup()">Done</button>
+</div>
+
+<table id="sprintlist">
+    <thead>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Epic</th>
+      <th>Estimate</th>
+      <th>Assignee</th>
+      <th>Status</th>
+    </thead>
+  
+    <tbody id="sprintbody">
+  
+      <tr> 
+        <td> </td>
+        <td>  </td>
+        <td>  </td>
+        <td>  </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+  
+  
+    </tbody>
+  </table>
+
+
+  <h3>User Story Page</h3>
+<div>
+  <a href="userstorypage.html" id="userstorypage">See User Story Backlog</a>
+</div>
+</body>
+  
+  

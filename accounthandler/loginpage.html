@@ -9,43 +9,54 @@
 
     <!-- Title of your website -->
     <title>The Lean Ecommerce website</title>
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link to external CSS file -->
     <link rel="stylesheet" href="style.css">
 
     <!-- Link to external JS file -->
-    <script src="script.js" defer></script>
+    <script src="script.js" type="module" defer></script>
 </head>
-<body class="signup-body">
-<div class="signup-thing">
+<body class="login-body">
 <div class="center">
+</div>
+<div class="popup">
     <div class="form">
-        <h2>Signup Here</h2>
+        <h2>Login Here</h2>
         <div class="form-element">
-            <label for="email">Email Address</label>
+            <label for="email">Email</label>
             <input type="text" id="email" placeholder="Enter email here">
-        </div>
-        <div class="form-element">
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter username here">
         </div>
 
         <div class="form-element">
             <label for="password">Password</label>
             <input type="password" id="password" placeholder="Enter password">
-          
+            <div class="form-element">
+                <a href="#">Forgot password?</a>
+                
+            </div>
+    
     </div>
     <div class="form-element">
         <input type="checkbox" id="remember-me">
         <label for="remember-me">Remember me</label>
     </div>
     <div class="form-element">
-        <button onclick="login()">Sign in</button>
+        <button onclick="login()">Sign In</button>
         <p id="failedlogin" type="angrysmalltext"></p><p id="successfullogin" type="happysmalltext"></p>
     </div>
 
     <div class="form-link">
-         <span>Already Registered? <a href="loginpage.html" class="signup-link">Sign in</a></span>
+         <span>New to website? <a href="registernewacc.html" class="signup-link">Sign Up</a></span>
     </div>
+
+    <div class="line"></div>
+
+    <div class="media-options">
+        <a href="#" class="gmail">
+            <i class='bx bxl-gmail' style='color:#eadede' ></i>
+            <span> Login with Gmail</span>
+        </a>
+    </div>
+
 </div>
 </body>

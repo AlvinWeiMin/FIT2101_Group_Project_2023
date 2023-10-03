@@ -1,13 +1,17 @@
- .login-body, .signup-body{
-    background: blue;
-}
-.header-main {
+/* Please follow this format when writing CSS */
+
+/* Alignment */
+/* Box */
+/* Text */
+/* Background */
+/* Not Sure */
+
 
 body {
     font-family: Arial, sans-serif;/*this is the font of what we are using in the webpag\*/
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(11.8px);
-    -webkit-backdrop-filter: blur(11.8px);
+    background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+    opacity: 0.8;
+    color: white;   
 }
 
 main {
@@ -28,89 +32,98 @@ footer {
 /* Header Section */
 
 header {
+
+     /* Alignment */
     align-items:center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 20px;
-    padding: 20px; 
-    border-radius: 20px;
-    background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
-    opacity: 0.8;
-    color: white;
-    padding: 0.8em 1.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+     /* Box */
+    padding: 10px;
     border: none;
-    border-radius: 25px;
+    border-radius: 50px;
+    margin: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    
+    /* Text */
+    color: white;
+
+    /* Background */
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    opacity: 1;
+
+    /* Not Sure */
     transition: all 0.3s;
 }
 
 
-/* Logo + Title */
-/* Div that holds logo and title next to it */
+/*Logo + Title */
 .logo-title {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    margin-left: 10px;
 }
 
+/*Logo */
 .logo {
     width: 100px;
     height: 100px;
-    margin-left: 100px;
+    margin: 10px;
 }
 
+
+/*Title */
 header h1 {
     font-size: 30px;
     line-height: 1.25;
     font-weight: 550;
-    color: #f0eded;
+    color: #0b0a0ae4;
     padding-left: 15px;
 }
 
 /*Navigation bar*/
 
 nav {
+    /* Alignment */
     text-align: right;
-    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+     /* Box */
     padding: 5px 10px;
     border-radius: 5px;
-    text-decoration: none;
-    display: inline; /* Display the login and register links inline */
+    margin: 30px;
     margin-right: 20px; /* Adjust the spacing between links */
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    /* Not Sure */
     transition: all 0.3s;
 }
-.header-logo {
-    float: left;
-    width: fit-content;
-    
-    padding-right: 50px;
-    height: 100%;
-    display: flex;
-}
+
 
 nav a {
-    text-decoration: none;
-    display: inline; /* Display the login and register links inline */
-    margin-right: 20px; /* Adjust the spacing between links */
-    font-family: inherit;
-    font-size: 18px;
-    color: white;
-    padding: 0.8em 1.2em;
-    display: flex;
+    /* Alignment */
+    display: flex; 
     align-items: center;
     justify-content: center;
+
+    /* Box */
+    padding: 0.8em 1.2em;
     border: none;
     border-radius: 25px;
+    margin-right: 20px;
+
+    /* Text */
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 18px;
+    color: rgb(33, 34, 34);
+    text-decoration: none;
+
+    /* Not Sure */
     transition: all 0.3s;
 }
 
@@ -119,41 +132,16 @@ nav a:hover {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   }
   
-.navbuttons {
-    text-align: center;
-    font-size: 10px;
-    margin: 10px;
-    padding: 5px 5px;
-}
-
-.nav-catalogue {
-    text-decoration: none;
-    display: inline; /* Display the login and register links inline */
-    margin-right: 20px; /* Adjust the spacing between links */
-    font-family: inherit;
-    font-size: 18px;
-    color: white;
-    padding: 0.8em 1.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 25px;
-    transition: all 0.3s;
-
-}
-
 
 /* Search Bar */
-
 .search-bar {
-    display: flex; /* To make the input and button align horizontally */
-    align-items: center; /* Vertically center items */
+    display: flex;
+    align-items: center; 
 }
 
 #searchInput {
     padding: 5px;
-    border: 1px solid #ccc;
+    border: 3px solid #ffffff;
     border-radius: 10px;
     margin-right: 5px;
 }
@@ -168,75 +156,90 @@ nav a:hover {
     transition: background-color 0.3s;
 }
 
-/* Account stuff */
+/* Login/Signup */
 
 .account {
+    /* Alignment */
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    /* Box */
     gap: 10px;
     padding: 5px 10px;
 }
 
 .login {
-    padding: 10px 10px;
+    /* Alignment */
     text-align: center;
+    display: flex;
+
+    /* Box */
+    padding: 10px 10px;
     border: 0px solid #ffffff;
     border-radius: 20px;
+    
+    /* Background */
     background: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(11.8px);
     -webkit-backdrop-filter: blur(11.8px);
+   
+    /* Movement? */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .signup {
-    padding: 10px 10px;
+    /* Alignment */
     text-align: center;
+
+    /* Box */
+    padding: 10px 10px;
     border: 0px solid #ffffff;
     border-radius: 20px;
+
+    /* Background */
     background: rgba(88, 84, 84, 0.5);
     backdrop-filter: blur(11.8px);
     -webkit-backdrop-filter: blur(11.8px);
+    
+    /* Movement? */
     cursor: pointer;
     transition: background-color 0.3s;
 }
-.header-nav a{
-    padding: 0 10px;
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    color: #fff;
-    margin-left:200px;
 
-/* Homepage Sections*/
 
-.section1 {
-    background: rgba(255, 255, 255, 0.52);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+/* HomePage Sections*/
+
+.sectionhome {
+    /* Alignment */
+    text-align: left;;
+
+    /* Box */
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.436);
+
+    /* Text */
+    color: rgb(76, 75, 75);
+
+    /* Background */
+    background: rgba(255, 255, 255, 0.89);
     backdrop-filter: blur(11.8px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    margin: 20px;
-
-}
-
-
-.section2 {
-    background: rgba(255, 255, 255, 0.52);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(11.8px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    margin: 20px;
 }
 
 
 /* from here is tom */
+
+.login-body, .signup-body{
+    background: blue;
+}
+
+
 .center {
     position:absolute;
     top:50%;
@@ -393,6 +396,7 @@ a.gmail{
     text-align: left;
     font-size: 8px;
     font-weight: normal;
+    color: black;
 }
 .form .form-element a[type="smallhyperlink"] {
     display: inline;
@@ -422,3 +426,38 @@ a.gmail{
     font-weight: normal;
     color: green;
 }
+
+/* contact form 
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container.contact {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
