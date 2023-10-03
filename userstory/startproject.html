@@ -14,8 +14,10 @@
         <label for="projectName">Project Name:</label>
         <input type="text" id="projectName" name="projectName" required><br>
 
-        <label for="projectDescription">Project Description:</label>
-        <textarea id="projectDescription" name="projectDescription"></textarea><br>
+        <div>
+            <label for="projectDescription">Project Description:</label><br>
+            <textarea id="projectDescription" name="projectDescription"></textarea>
+        </div>
 
         <label for="productOwner">Product Owner:</label>
         <select id="productOwner" name="productOwner" required>
@@ -23,6 +25,21 @@
         <option value="John">John</option>
         <option value="Sarah">Sarah</option>
         <option value="Paul">Paul</option>
+        </select><br>
+
+        <label for="scrumMaster">Scrum Master</label>
+        <select id="scrumMaster" name="scrumMaster" required>
+        <option value="None">None</option>
+        <option value="John">John</option>
+        <option value="Sarah">Sarah</option>
+        <option value="Paul">Paul</option>
+        </select><br>
+
+        <label for="projectStatus">Project Status</label>
+        <select id="projectStatus" name="projectStatus" required>
+        <option value="Not Started">Not Started</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Completed">Completed</option>
         </select><br>
 
 </html>
