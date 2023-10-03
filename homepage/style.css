@@ -8,17 +8,28 @@
 
 
 body {
-    font-family: Arial, sans-serif;/*this is the font of what we are using in the webpag\*/
-    background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
-    opacity: 0.8;
-    color: white;   
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0px;
+
+    background-image: url(city_background.jpg);
+    background-size: cover; /* Adjust the image size as needed */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+
+    /*background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);  
+    background: #E0EAFC;  /* fallback for old browsers 
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    /*background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);*/
+
 }
 
 main {
     margin: 20px;
     padding: 20px;
     border-radius: 5px;
-    text-align: center;
+    text-align: center; 
 }
 
 footer {
@@ -32,57 +43,45 @@ footer {
 /* Header Section */
 
 header {
-
      /* Alignment */
     align-items:center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
-     /* Box */
-    padding: 10px;
-    border: none;
-    border-radius: 50px;
-    margin: 20px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    
-    /* Text */
-    color: white;
+    margin: 15px 50px;
+    border-radius: 15px;
 
-    /* Background */
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    opacity: 1;
-
-    /* Not Sure */
-    transition: all 0.3s;
+    /* Background with Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.3); /* Adjust the transparency */
+    backdrop-filter: blur(10px); /* Adjust the blur amount */
+    -webkit-backdrop-filter: blur(10px); /* For cross-browser compatibility */
+    animation: glowing 1s infinite;
 }
 
-
-/*Logo + Title */
-.logo-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Define the glowing animation */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 20px #ffffff;
+    }
+    50% {
+        box-shadow: 0 0 20px #ffffff;
+    }
+    100% {
+        box-shadow: 0 0 20px #ffffff;
+    }
 }
 
 /*Logo */
 .logo {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+    width: 160px;
+    height: 62px;
+    border-radius: 15px;
+    opacity: 0.9;
+    animation: glowing 1s infinite;
+
 }
 
-
-/*Title */
-header h1 {
-    font-size: 30px;
-    line-height: 1.25;
-    font-weight: 550;
-    color: #0b0a0ae4;
-    padding-left: 15px;
-}
 
 /*Navigation bar*/
 
@@ -90,14 +89,12 @@ nav {
     /* Alignment */
     text-align: right;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-end;
 
-     /* Box */
+    /* Box */
     padding: 5px 10px;
     border-radius: 5px;
-    margin: 30px;
-    margin-right: 20px; /* Adjust the spacing between links */
 
     /* Not Sure */
     transition: all 0.3s;
@@ -112,124 +109,176 @@ nav a {
 
     /* Box */
     padding: 0.8em 1.2em;
-    border: none;
     border-radius: 25px;
-    margin-right: 20px;
 
     /* Text */
-    font-family: inherit;
+    font-size: 17px;
     font-weight: bold;
-    font-size: 18px;
-    color: rgb(33, 34, 34);
+    color: rgb(42, 40, 40);
     text-decoration: none;
 
     /* Not Sure */
     transition: all 0.3s;
 }
 
+/* Define the glowing animation */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgb(231, 35, 35);
+    }
+    50% {
+        text-shadow: 0 0 5px rgb(231, 35, 35);
+    }
+    100% {
+        text-shadow: 0 0 5px  rgb(231, 35, 35);
+    }
+}
+
 nav a:hover {
-    transform: translateY(-3px);
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    font-size: 18px;
+    /*animation: glow 1s infinite alternate;*/
   }
   
 
-/* Search Bar */
-.search-bar {
-    display: flex;
-    align-items: center; 
-}
-
-#searchInput {
-    padding: 5px;
-    border: 3px solid #ffffff;
-    border-radius: 10px;
-    margin-right: 5px;
-}
-
-.search-button {
-    padding: 10px 15px;
-    border: 0px solid #ffffff;
-    border-radius: 10px;
-    background-color: #3294e5;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-/* Login/Signup */
-
-.account {
+/*Search + Signup/Login*/
+.search-signup {
     /* Alignment */
     display: flex;
     align-items: center;
-    justify-content: center;
-    
-    /* Box */
-    gap: 10px;
-    padding: 5px 10px;
-}
+    margin-left: auto;
 
-.login {
-    /* Alignment */
-    text-align: center;
+    /* Box */
+    border-left-width: 10px;
+    border-radius: 5px;
+
+    /* Not Sure */
+    transition: all 0.3s;
+}
+/* Search Bar */
+.search-bar {
     display: flex;
-
-    /* Box */
-    padding: 10px 10px;
-    border: 0px solid #ffffff;
-    border-radius: 20px;
-    
-    /* Background */
-    background: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(11.8px);
-    -webkit-backdrop-filter: blur(11.8px);
-   
-    /* Movement? */
-    cursor: pointer;
-    transition: background-color 0.3s;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 25px;
+    padding: 5px;
+    width:300px; /* Adjust the width as needed */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a shadow */
 }
 
-.signup {
+/* Search input */
+#searchInput {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent; /* Make the input background transparent */
+    padding: 10px;
+    font-size: 16px;
+    color: rgba(39, 38, 38, 0.9); /* Adjust text color and opacity */
+}
+
+/* Search button */
+.search-button {
+    /* Glassmorphic styles */
+    background: rgb(149, 146, 146,0.9);
+    border: 0.5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 5px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Apply a hover effect */
+.search-button:hover {
+    background: rgba(50, 49, 49, 0.808);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the SVG icon */
+.search-button svg {
+    width: 100%; /* Make the SVG icon take up 100% of the button's width */
+    height: 100%; /* Make the SVG icon take up 100% of the button's height */
+    fill: rgba(255, 255, 255, 1); /* Adjust icon color and opacity */
+}
+
+
+
+/* Signin button */
+.signin-button a {
     /* Alignment */
-    text-align: center;
 
     /* Box */
-    padding: 10px 10px;
-    border: 0px solid #ffffff;
-    border-radius: 20px;
+    padding: 10px 20px; 
+    border-radius: 15px;
 
-    /* Background */
-    background: rgba(88, 84, 84, 0.5);
-    backdrop-filter: blur(11.8px);
-    -webkit-backdrop-filter: blur(11.8px);
+    /* Text */
+    font-weight: bold;
+    font-size: 16px; 
+    color: rgba(255, 255, 255, 1); /* Match the text color and opacity */
+    text-decoration: none;
     
-    /* Movement? */
-    cursor: pointer;
-    transition: background-color 0.3s;
+    /* Background */
+    background: #7ac1fb; 
+}
+
+/* Apply a hover effect */
+.signin-button a:hover {
+    background: linear-gradient(45deg, #c0e2ff, #a0d4ff); /* Pale blue gradient */
 }
 
 
 
 /* HomePage Sections*/
-
-.sectionhome {
+.box-row {
     /* Alignment */
-    text-align: left;;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+
+.box-container {
+    /* Alignment */
+    text-align: left;
+    display: flex;
+    justify-content: space-between; /* Distribute space between the boxes */
 
     /* Box */
-    padding: 20px;
+    padding: 2%; /* Adjust padding as needed */
     border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    margin: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.436);
+    border-radius: 1vw; /* Use vw units for border-radius */
+    margin: 1%;
 
     /* Text */
-    color: rgb(76, 75, 75);
+    color: rgb(20, 17, 17);
 
-    /* Background */
-    background: rgba(255, 255, 255, 0.89);
-    backdrop-filter: blur(11.8px);
-    -webkit-backdrop-filter: blur(20px);
+    /* Background with Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.6); /* Adjust the transparency */
+    backdrop-filter: blur(2vw); /* Use vw units for blur */
+    -webkit-backdrop-filter: blur(2vw); /* For cross-browser compatibility */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Add a subtle border */
+
+    /* Size of the boxes */
+    width: 30%; /* Default width as a percentage */
+    height: 25vh; /* Default height as a percentage of viewport height */
+
+    /* Responsive sizes (optional) */
+    @media (max-width: 768px) {
+        width: 45%; /* Adjust width for screens up to 768px */
+        height: 20vh; /* Adjust height for screens up to 768px */
+    }
+
+    @media (max-width: 480px) {
+        width: 90%; /* Adjust width for screens up to 480px */
+        height: 15vh; /* Adjust height for screens up to 480px */
+    }
 }
 
 
