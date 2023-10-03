@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-  import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+  import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey, update} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -48,12 +48,12 @@ const firebaseConfig = {
     
     
     story.forEach(element => {
-      AddStoryToSprintTable(element.storynum , element.title , element.desc , element.epic , element.estimate , element.assignee);
+      AddStoryToSprintTable(element.storynum , element.title , element.desc , element.epic , element.estimate , element.assignee, element.status);
     })
     
   }
   
-  function AddStoryToSprintTable(storynum,  title, desc, epic, estimate , assignee){
+  function AddStoryToSprintTable(storynum,  title, desc, epic, estimate , assignee , status){
     
   
     let strow = document.createElement('tr');
@@ -64,6 +64,7 @@ const firebaseConfig = {
     let std3 = document.createElement('td');
     let std4 = document.createElement('td');
     let std5 = document.createElement('td');
+    let std6 = document.createElement('td');
     
     sprintStoryList.push([storynum, title,desc,epic,estimate,assignee])
     std0.innerHTML = storynum;
@@ -72,16 +73,30 @@ const firebaseConfig = {
     std3.innerHTML = epic;
     std4.innerHTML = estimate;
     std5.innerHTML = assignee;
+    std6.innerHTML = status;
   
-    strow.appendChild(std0); strow.appendChild(std1); strow.appendChild(std2); strow.appendChild(std3); strow.appendChild(std4); strow.appendChild(std5);
+    strow.appendChild(std0); strow.appendChild(std1); strow.appendChild(std2); strow.appendChild(std3); strow.appendChild(std4); strow.appendChild(std5), strow.appendChild(std6);
     
   
     var ControlDiv = document.createElement("div")
-    ControlDiv.innerHTML += '<button type="button" class="btn-del-story" onclick="TestingStuff()">DeleteStory</button>'
+    ControlDiv.innerHTML += '<button type="button" class="btn-edit-status" onclick="EditStatus(' + storynum + ')">Edit Status</button>'
   
     strow.appendChild(ControlDiv);
     sbody.appendChild(strow)
   }
   
   
-  
+  // Edits the user story to mark it as completed
+
+  // TODO: make a pop up so people can select the changes , also maybe an edit story button ?
+  document.EditStatus = function(storynum){
+
+    var storyRef = ref(db, 'sprintUserStories/' +storynum);
+
+    update(storyRef ,{ 
+        status : "Completed"
+    }
+        )
+
+
+  }
