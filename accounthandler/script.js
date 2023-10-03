@@ -25,13 +25,6 @@ document.register = function() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
-    // Create an object to represent the user
-    var user = {
-        email: email,
-        username: username,
-        password: password
-    };
-
     document.getElementById("password").style.borderColor = "#AAAAAA";
     document.getElementById("failedpassword").innerHTML = "";
     document.getElementById("email").style.borderColor = "#AAAAAA";
@@ -43,7 +36,7 @@ document.register = function() {
             const user = userCredential.user;
             // Store additional user data in the Realtime Database
             const accountsRef = ref(db, 'accounts/' + user.uid);
-            set(accountsRef, { username: username });
+            set(accountsRef, { "username": username, "password": password, "email": email });
             document.getElementById("registernotif").innerHTML = "Account registered!";
             document.getElementById("loginlink").innerHTML = "Return to login page?";
         })
