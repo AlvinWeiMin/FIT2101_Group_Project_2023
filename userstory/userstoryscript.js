@@ -23,6 +23,12 @@ const firebaseConfig = {
 const userStoryForm = document.getElementById('userStoryForm');
 var storyid = 0
 
+
+
+window.onload = SelectAllData;
+
+
+
 // CREATING A USER STORY
 document.addEventListener("DOMContentLoaded", function() {
   const userStoryForm = document.getElementById('userStoryForm');
@@ -65,7 +71,7 @@ var storyId = 0;
 var storyList = [];
  // DISPLAYING USER STORIES
 var tbody = document.getElementById('backlogbody');
-var sbody = document.getElementById('sprintbody')
+
 
 function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
   
@@ -92,7 +98,7 @@ function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
 
   var ControlDiv = document.createElement("div")
   ControlDiv.innerHTML = '<button type=button" class="btn-usr-story"  data-toggle="modal" data-target="#examplemodalcentre" onclick="AddStoryToSprint('+ (storyList.length -1) +')">Add To Sprint</button>'
-  ControlDiv.innerHTML += '<button type="button" class="btn-del-story" onclick="TestingStuff()">DeleteStory</button>'
+  //ControlDiv.innerHTML += '<button type="button" class="btn-del-story" onclick="TestingStuff()">DeleteStory</button>'
 
   trow.appendChild(ControlDiv);
   tbody.appendChild(trow)
@@ -109,9 +115,7 @@ function AddAllItemsToTable(story){
 }
 
 function SelectAllData(){
-  const dbRef = query(ref(db, "userstories"), orderByKey());
-  //const dbRef = ref(db ,  "userstories");
-
+  const dbRef = query(ref(db, 'userstories'), orderByKey());
   onValue(dbRef, (snapshot) => {
 
     var stories = [];
@@ -127,28 +131,52 @@ function SelectAllData(){
 
 }
 
+
+
+// ADDS THE STORY TO THE CURRENT SPRINT DATABASE
 document.AddStoryToSprint = function(storynum){
   console.log("TEST");
-  let trow2 = document.createElement('tr');
 
-  let td0 = document.createElement('td');
-  let td1 = document.createElement('td');
-  let td2 = document.createElement('td');
-  let td3 = document.createElement('td');
-  let td4 = document.createElement('td');
-  let td5 = document.createElement('td');
 
-  td0.innerHTML = storyList[storynum][0];
-  td1.innerHTML = storyList[storynum][1];
-  td2.innerHTML = storyList[storynum][2];
-  td3.innerHTML = storyList[storynum][3];
-  td4.innerHTML = storyList[storynum][4];
-  td5.innerHTML = storyList[storynum][5];
+  const sprintStoryRef =  ref(db, 'sprintUserStories/' + storyList[storynum][0]);
 
-  trow2.appendChild(td0); trow2.appendChild(td1); trow2.appendChild(td2); trow2.appendChild(td3); trow2.appendChild(td4); trow2.appendChild(td5);
 
-  sbody.appendChild(trow2);
+  set(sprintStoryRef, {
+    storynum : storyList[storynum][0],
+    title: storyList[storynum][1],
+    desc: storyList[storynum][2],
+    epic: storyList[storynum][3],
+    estimate: storyList[storynum][4],
+    assignee: storyList[storynum][5]
+  });
+  
+  alert("ADDED STORY TO SPRINT");
+
+
+
+
+
+  // let trow2 = document.createElement('tr');
+
+  // let td0 = document.createElement('td');
+  // let td1 = document.createElement('td');
+  // let td2 = document.createElement('td');
+  // let td3 = document.createElement('td');
+  // let td4 = document.createElement('td');
+  // let td5 = document.createElement('td');
+
+  // td0.innerHTML = storyList[storynum][0];
+  // td1.innerHTML = storyList[storynum][1];
+  // td2.innerHTML = storyList[storynum][2];
+  // td3.innerHTML = storyList[storynum][3];
+  // td4.innerHTML = storyList[storynum][4];
+  // td5.innerHTML = storyList[storynum][5];
+
+  // trow2.appendChild(td0); trow2.appendChild(td1); trow2.appendChild(td2); trow2.appendChild(td3); trow2.appendChild(td4); trow2.appendChild(td5);
+
+  // var ControlDiv = document.createElement("div")
+
+
+  // sbody.appendChild(trow2);
 }
 
-
-window.onload = SelectAllData;
