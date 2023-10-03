@@ -28,6 +28,18 @@
 <body>
 <h1>Sprint Backlog</h1>
 
+<div class="popup" id="popup">
+  <h1 id="story-status-header">Edit Status:</h1>
+  
+  <select id="story-status-val" name="story-status" required>
+  <option value="To Do">To Do</option>
+  <option value="In Progress">In Progress</option>
+  <option value="Completed">Completed</option>
+  </select>
+
+  <button type="submit" onclick="closePopup()">Done</button>
+</div>
+
 <table id="sprintlist">
     <thead>
       <th>ID</th>

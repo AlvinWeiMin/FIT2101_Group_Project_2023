@@ -14,7 +14,7 @@ const firebaseConfig = {
   appId: "1:624522420359:web:5912dbfcb057d58a6c1822"
 };
 
-
+ var status_edit = null;
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
@@ -91,12 +91,28 @@ const firebaseConfig = {
   // TODO: make a pop up so people can select the changes , also maybe an edit story button ?
   document.EditStatus = function(storynum){
 
-    var storyRef = ref(db, 'sprintUserStories/' +storynum);
+    status_edit = storynum;
+    
+    let popup = document.getElementById('popup')
+    popup.classList.add("open-popup")
+
+
+
+
+  }
+
+
+  document.closePopup = function(){
+
+    var storyRef = ref(db, 'sprintUserStories/' + status_edit);
 
     update(storyRef ,{ 
-        status : "Completed"
+        status : document.getElementById("story-status-val").value
     }
         )
+
+
+    popup.classList.remove("open-popup")
 
 
   }
