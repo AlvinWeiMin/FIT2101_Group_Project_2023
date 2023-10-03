@@ -396,6 +396,7 @@ a.gmail{
     text-align: left;
     font-size: 8px;
     font-weight: normal;
+    color: black;
 }
 .form .form-element a[type="smallhyperlink"] {
     display: inline;

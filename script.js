@@ -112,7 +112,6 @@ function register() {
 
     // Store the user data in localStorage
     localStorage.setItem(localStorage.length, JSON.stringify(user));
-
     document.getElementById("registernotif").innerHTML = "Account registered! ";
     document.getElementById("loginlink").innerHTML = "Return to login page?";
 }
