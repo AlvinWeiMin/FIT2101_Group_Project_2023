@@ -39,7 +39,7 @@ function createProfiles(stories, users) {
 
   profileStr += "</p>";
 
-  document.body.innerHTML += profileStr;
+  document.getElementById("profiles").innerHTML += profileStr;
 }
 
 async function loadProfiles() {
