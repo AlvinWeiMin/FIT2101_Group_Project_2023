@@ -109,7 +109,7 @@ function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
 }
 
 function AddAllItemsToTable(story){
-  
+  tbody.innerHTML = "";
   
   story.forEach(element => {
     AddStoryToTable(element.storynum , element.title , element.desc , element.epic , element.estimate , element.assignee);
@@ -151,7 +151,7 @@ function fetchAndSetUsers() {
 }
 
 function addAllUsersAsOption(users) {
-  console.log(users);
+
   var optionStr = "";
 
   users.forEach(element => {
@@ -164,8 +164,8 @@ function addAllUsersAsOption(users) {
 
 // ADDS THE STORY TO THE CURRENT SPRINT DATABASE
 document.AddStoryToSprint = function(storynum){
-  console.log("TEST");
 
+  console.log("TEST");
 
   const sprintStoryRef =  ref(db, 'sprintUserStories/' + storyList[storynum][0]);
 
@@ -188,8 +188,6 @@ document.DeleteStory = function(storynum){
   const userStoryRef =  ref(db, 'userstories/' + storynum);
 
   remove(userStoryRef)
-
-
 }
 
 
