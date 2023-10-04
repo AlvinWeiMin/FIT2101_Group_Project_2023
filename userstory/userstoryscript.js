@@ -164,10 +164,22 @@ document.DeleteStory = function(storynum){
 
   remove(userStoryRef)
 
-
+  const admin = "Adminstrator";
+  const member = "Member";
+  const viewer = "Viewer";
 }
 
 document.EditStory = function(storynum){
+  /*
+  1) Get current user's role from its id
+  2) If user is "Adminstrator", proceed to step 5
+  3) If user is "Member", proceed to step 6
+  4) If user is "Viewer", do a pop up to show that they cannot edit as they need the required role 
+  5) Adminstrator - pop up a new window and show all textbox to edit the user story
+  6) Member - pop up a new window and only show the allowed textbox to edit the user story while greying out the inaccessible textbox
+  7) If changes are done, update the data accordingly in firebase with update()
+  */
+  const userCurrentRole = userCurrent.id;
 
 }
 
