@@ -34,6 +34,11 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = 'about.html';
     });
 
+    const playlistLink = document.getElementById('playlistLink');
+    aboutLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'playlist.html';
+    });
     // Home link logic (fixed the element reference)
     const homeLink = document.getElementById('homeLink');
     homeLink.addEventListener('click', function(event) {
@@ -75,10 +80,12 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         window.location.href = 'contact.html';
     });
+    
 
     const searchButton = document.querySelector('.search-bar button');
     if (searchButton) {  // Ensure the search button is present on the page
         searchButton.addEventListener('click', performSearch);
     }
+    
 
 });
