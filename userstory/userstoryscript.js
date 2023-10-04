@@ -184,6 +184,7 @@ document.AddStoryToSprint = function(storynum){
   alert("ADDED STORY TO SPRINT");
 }
 
+// DELETE THE STORY FROM THE CURRENT SPRINT DATABASE
 document.DeleteStory = function(storynum){
 
   const userStoryRef =  ref(db, 'userstories/' + storynum);
@@ -195,6 +196,7 @@ document.DeleteStory = function(storynum){
   const viewer = "Viewer";
 }
 
+// EDIT THE STORY FROM THE CURRENT SPRINT DATABASE IF CONDITIONS WERE MET
 document.EditStory = function(storynum){
   /*
   1) Get current user's role from its id
