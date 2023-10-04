@@ -36,7 +36,7 @@ document.register = function() {
             const user = userCredential.user;
             // Store additional user data in the Realtime Database
             const accountsRef = ref(db, 'accounts/' + user.uid);
-            set(accountsRef, { "username": username, "password": password, "email": email });
+            set(accountsRef, { "username": username, "password": password, "email": email, "role": "None" });
             document.getElementById("registernotif").innerHTML = "Account registered!";
             document.getElementById("loginlink").innerHTML = "Return to login page?";
         })
