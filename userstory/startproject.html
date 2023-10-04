@@ -11,12 +11,12 @@
     <h1>Create New Project</h1>
     <div class="projectContainer"> <form id="projectForm">
         <label for="projectName">Project Name:</label>
-        <input type="text" id="projectName" name="projectName" required><br>
+        <input type="text" id="projectName" name="projectName" placeholder="Enter Project Name" required><br>
         <br>
 
         <div>
             <label for="projectDescription">Project Description:</label><br>
-            <textarea id="projectDescription" name="projectDescription"></textarea>
+            <textarea id="projectDescription" name="projectDescription" placeholder="Enter Project Description"></textarea>
         </div>
         
         <br>
@@ -51,9 +51,18 @@
         <br>
 
         <label for="projectEndDate">Project End Date:</label>
-        <input type="date" id="projectEndDate" name="projectEndDate" required><br>
+        <input type="date" id="projectEndDate" name="projectEndDate"><br>
         <br>
 
         <button type="create" id="createProject">Create</button>
+
+    </form>
+    </div>
+
+        <ul uf-id="projectList">
+            <li uf-id="projectName"></li>
+        </ul>
+
+        <script scr="project.js"></script>
 
 </html>
