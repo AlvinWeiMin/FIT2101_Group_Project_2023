@@ -32,6 +32,7 @@ window.onload = SelectAllData;
 // CREATING A USER STORY
 document.addEventListener("DOMContentLoaded", function() {
   const userStoryForm = document.getElementById('userStoryForm');
+  fetchAndSetUsers()
 
   userStoryForm.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -108,7 +109,6 @@ function AddStoryToTable(storynum,  title, desc, epic, estimate , assignee){
 }
 
 function AddAllItemsToTable(story){
-  tbody.innerHTML = "";
   
   
   story.forEach(element => {
@@ -134,6 +134,32 @@ function SelectAllData(){
 
 }
 
+function fetchAndSetUsers() {
+  const dbRef = query(ref(db, 'accounts'), orderByKey());
+  onValue(dbRef, (snapshot) => {
+
+    var users = [];
+
+    snapshot.forEach(childSnapshot => {
+
+      users.push(childSnapshot.val());
+    
+    });
+
+    addAllUsersAsOption(users);
+  })
+}
+
+function addAllUsersAsOption(users) {
+  console.log(users);
+  var optionStr = "";
+
+  users.forEach(element => {
+    optionStr += "<option value='" + element.username + "'>" + element.username + "</option>";
+  });
+  
+  document.getElementById("assigned-to").innerHTML += (optionStr);
+}
 
 
 // ADDS THE STORY TO THE CURRENT SPRINT DATABASE
