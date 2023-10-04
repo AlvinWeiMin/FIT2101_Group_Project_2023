@@ -3,6 +3,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
   import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey, remove} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA1JWDoe41ljxU6Wx2K3xDlzkTmQ_pHWyc",
@@ -163,6 +164,10 @@ document.DeleteStory = function(storynum){
 
   remove(userStoryRef)
 
+
+}
+
+document.EditStory = function(storynum){
 
 }
 

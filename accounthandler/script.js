@@ -18,6 +18,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth(app);
+const dbRef =  ref(db);
+
+// Global Variable
+window.user = NaN;
+
 
 // Function to register a user
 document.register = function() {
@@ -72,10 +77,10 @@ document.login = function() {
     // Sign in the user using Firebase Authentication
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const user = userCredential.user;
+            window.user = userCredential.user;
             document.getElementById("successfullogin").innerHTML = "Login successful! Redirecting...";
             setTimeout(function() {
-                window.location.href = "../2101website.html";
+                window.location.href = "../homepage/2101website.html";
             }, 1000);
         })
         .catch((error) => {
@@ -87,4 +92,32 @@ document.login = function() {
             document.getElementById("password").value = "";
             console.error(errorCode, errorMessage);
         });
+}
+
+// Function to assign roles
+const admin = "Adminstrator";
+const member = "Member";
+const viewer = "Viewer";
+
+document.assignRoleAdmin = function() {
+    console.log(window.user.uid);
+    const updates = {};
+    updates['/accounts/${window.user.uid}/role'] = admin;
+    update(dbRef, updates);
+}
+
+document.assignRoleMember = function() {
+    console.log(window.user.uid);
+    const updates = {};
+    updates['/accounts/${window.user.uid}/role'] = member;
+    update(dbRef, updates);
+
+}
+
+document.assignRoleViewer = function() {
+    console.log(window.user.uid);
+    const updates = {};
+    updates['/accounts/' + window.user.uid + '/role'] = viewer;
+    update(dbRef, updates);
+
 }
