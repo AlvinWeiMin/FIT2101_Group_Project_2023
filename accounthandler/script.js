@@ -95,21 +95,21 @@ document.login = function() {
 }
 
 // Function to assign roles
-const admin = "Adminstrator";
+const admin = "Administrator";
 const member = "Member";
 const viewer = "Viewer";
 
 document.assignRoleAdmin = function() {
     console.log(window.user.uid);
     const updates = {};
-    updates['/accounts/${window.user.uid}/role'] = admin;
+    updates['/accounts/' + window.user.uid + '/role'] = admin;
     update(dbRef, updates);
 }
 
 document.assignRoleMember = function() {
     console.log(window.user.uid);
     const updates = {};
-    updates['/accounts/${window.user.uid}/role'] = member;
+    updates['/accounts/' + window.user.uid + '/role'] = member;
     update(dbRef, updates);
 
 }
