@@ -8,62 +8,62 @@
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
-
-    <script scr="project.js"></script>
+    <script src="project.js" type="module" defer></script>
 
     <title>Projects</title>
 </head>
 
 </body>
     <h1>Create New Project</h1>
-    <div class="projectContainer"> <form id="projectForm">
-        <label for="projectName">Project Name:</label>
-        <input type="text" id="projectName" name="projectName" placeholder="Enter Project Name" required><br>
-        <br>
+    <div class="projectContainer"> 
+        <form id="projectForm">
+            <label for="projectName">Project Name:</label>
+            <input type="text" id="projectName" name="projectName" placeholder="Enter Project Name" required><br>
+            <br>
 
-        <div>
-            <label for="projectDescription">Project Description:</label><br>
-            <textarea id="projectDescription" name="projectDescription" placeholder="Enter Project Description"></textarea>
-        </div>
-        
-        <br>
-        <label for="productOwner">Product Owner:</label>
-        <select id="productOwner" name="productOwner" required>
-        <option value="None">None</option>
-        <option value="Danny">Mr.Danny</option>
-        <option value="Jen">Ms.Jen</option>
-        <option value="Raymond">Mr.Raymond</option>
-        </select><br>
-        <br>
+            <div>
+                <label for="projectDescription">Project Description:</label><br>
+                <textarea id="projectDescription" name="projectDescription" placeholder="Enter Project Description"></textarea>
+            </div>
+            
+            <br>
+            <label for="productOwner">Product Owner:</label>
+            <select id="productOwner" name="productOwner" required>
+            <option value="None">None</option>
+            <option value="Danny">Mr.Danny</option>
+            <option value="Jen">Ms.Jen</option>
+            <option value="Raymond">Mr.Raymond</option>
+            </select><br>
+            <br>
 
-        <label for="scrumMaster">Scrum Master</label>
-        <select id="scrumMaster" name="scrumMaster" required>
-        <option value="None">None</option>
-        <option value="John">John</option>
-        <option value="Sarah">Sarah</option>
-        <option value="Paul">Paul</option>
-        </select><br>
-        <br>
+            <label for="scrumMaster">Scrum Master</label>
+            <select id="scrumMaster" name="scrumMaster" required>
+            <option value="None">None</option>
+            <option value="John">John</option>
+            <option value="Sarah">Sarah</option>
+            <option value="Paul">Paul</option>
+            </select><br>
+            <br>
 
-        <label for="projectStatus">Project Status</label>
-        <select id="projectStatus" name="projectStatus" required>
-        <option value="Not Started">Not Started</option>
-        <option value="In Progress">In Progress</option>
-        <option value="Completed">Completed</option>
-        </select><br>
-        <br>
-        
-        <label for="projectStartDate">Project Start Date:</label>
-        <input type="date" id="projectStartDate" name="projectStartDate" required><br>
-        <br>
+            <label for="projectStatus">Project Status</label>
+            <select id="projectStatus" name="projectStatus" required>
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
+            </select><br>
+            <br>
+            
+            <label for="projectStartDate">Project Start Date:</label>
+            <input type="date" id="projectStartDate" name="projectStartDate" required><br>
+            <br>
 
-        <label for="projectEndDate">Project End Date:</label>
-        <input type="date" id="projectEndDate" name="projectEndDate"><br>
-        <br>
+            <label for="projectEndDate">Project End Date:</label>
+            <input type="date" id="projectEndDate" name="projectEndDate"><br>
+            <br>
 
-        <button type="create" id="createProject">Create</button>
+            <button type="submit" id="createProject">Create</button>
 
-    </form>
+        </form>
     </div>
 
         <ul uf-id="projectList">

@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey, update} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -15,6 +16,7 @@ const firebaseConfig = {
     messagingSenderId: "624522420359",
     appId: "1:624522420359:web:5912dbfcb057d58a6c1822"
   };
+  
   
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function createProject(projectName, projectDesc, prodOwner, scrumMaster, projectStart, projectEnd) {
     // Your code to save the user story to Firebase here
 
-    const projectRef =  ref(database, 'projects/' + projectname);
+    const projectRef =  ref(database, 'projects/' + projectName);
 
     set(projectRef, {
       projectname: projectName,
