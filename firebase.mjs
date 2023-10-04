@@ -27,8 +27,6 @@ function createNewUserId() {
     return get(child(dbRef, 'userTotalCount/userCount')).then((snapshot) => {
         if (snapshot.exists()) {
             let returnId = snapshot.val() + 1;
-            // console.log("I was here");
-            // console.log(snapshot.val()+1);
             
             set(ref(database, 'userTotalCount'), {
                 userCount: returnId
