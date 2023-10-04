@@ -51,14 +51,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const logInLink = document.getElementById('logInLink');
     logInLink.addEventListener('click', function(event) {
         event.preventDefault();
-        window.location.href = 'loginpage.html';
+        window.location.href = '../accounthandler/loginpage.html';
     });
 
     // Services link logic
     const accountNewRegLink = document.getElementById('accountNewRegLink');
     accountNewRegLink.addEventListener('click', function(event) {
         event.preventDefault();
-        window.location.href = 'registernewacc.html';
+        window.location.href = '../accounthandler/registernewacc.html';
     });
 
     // Catalogue link logic
@@ -82,69 +82,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
-
-
-document.querySelector("#show-login").addEventListener("click",function(){
-    document.querySelector(".popup").classList.add("active");
-});
-
-document.querySelector(".popup .close-btn").addEventListener("click",function(){
-    document.querySelector(".popup").classList.remove("active");
-});
-
-
-document.querySelector(".popup .signup-link").addEventListener("click",function(){
-    document.querySelector(".popup").classList.add("active");
-});
-
-// Function to register a user
-function register() {
-    var email = document.getElementById("email").value;
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-
-    // Create an object to represent the user
-    var user = {
-        email: email,
-        username: username,
-        password: password
-    };
-
-    // Store the user data in localStorage
-    localStorage.setItem(localStorage.length, JSON.stringify(user));
-    document.getElementById("registernotif").innerHTML = "Account registered! ";
-    document.getElementById("loginlink").innerHTML = "Return to login page?";
-}
-
-// Function to perform login
-function login() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-    var loginfailed = true;
-    
-    document.getElementById("failedlogin").innerHTML = "";
-    document.getElementById("successfullogin").innerHTML = "";
-
-    // Iterate through localStorage keys (usernames)
-    for (let i = 0; i < localStorage.length; i++) {
-        let storedUsername = localStorage.key(i); // Get the username from localStorage
-        let storedUserData = JSON.parse(localStorage.getItem(storedUsername)); // Parse user data
-
-        // Check if the provided username and password match a stored user
-        if (storedUserData && username === storedUserData['username'] && password === storedUserData['password']) {
-            document.getElementById("successfullogin").innerHTML = "Login successful! Redirecting...";
-            loginfailed = false;
-            setTimeout(function() {
-                window.location.href = "2101website.html";
-            }, 1000);
-            break; // Exit the loop once a match is found
-        }
-    }
-
-    if (loginfailed) {
-        document.getElementById("failedlogin").innerHTML = "Provided username or password is invalid.";
-    }
-}
-
-
-console.log("Hello World")
