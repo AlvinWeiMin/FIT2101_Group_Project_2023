@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-  import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey, update} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+  import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey, update , limitToLast} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -116,3 +116,48 @@ const firebaseConfig = {
 
 
   }
+
+  // for creating sprint stuff
+
+  const sprintInfoContainer = document.getElementById("sprint-information");
+
+  localStorage.setItem("hasCurrentSprint", "true")
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Your code here
+if (localStorage.getItem("hasCurrentSprint") == "true") {
+
+  var sprintRef = ref(db, 'sprints/');
+
+
+  get( query(sprintRef , limitToLast(1))).then((snapshot)=>{
+
+    if(snapshot.exists()){
+      var sprintName = snapshot.val();
+      
+      var sprintId = sprintName[Object.keys(sprintName)[0]].sprintId
+
+
+
+    }
+    console.log(sprintId)
+
+    sprintInfoContainer.textContent = 'Current Sprint : ' + sprintId
+  })
+
+
+
+  
+
+
+}
+else {
+  sprintInfoContainer.textContent = "No Active Sprint"
+}
+  })
+
+
+
+
+
