@@ -26,17 +26,17 @@ body {
 }
 
 main {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
+    margin: 1vw;
+    padding: 1vw;
+    border-radius: 0.25vw;
     text-align: center; 
 }
 
 footer {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
+    margin: 1vw;
+    padding: 1vw;
+    border-radius: 0.25vw;
+    text-align: center; 
 }
 
 
@@ -49,34 +49,35 @@ header {
     flex-direction: row;
     justify-content: space-between;
 
-    margin: 15px 50px;
-    border-radius: 15px;
+    margin:1vw 5vw;
+    height: 7.5vh;
+    border-radius: 0.748vw;
 
     /* Background with Frosted Glass Effect */
-    background: rgba(255, 255, 255, 0.3); /* Adjust the transparency */
-    backdrop-filter: blur(10px); /* Adjust the blur amount */
-    -webkit-backdrop-filter: blur(10px); /* For cross-browser compatibility */
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(0.5vw); 
+    -webkit-backdrop-filter: blur(0.5vw);
     animation: glowing 1s infinite;
 }
 
 /* Define the glowing animation */
 @keyframes glowing {
     0% {
-        box-shadow: 0 0 20px #ffffff;
+        box-shadow: 0 0 1vw #ffffff;
     }
     50% {
-        box-shadow: 0 0 20px #ffffff;
+        box-shadow: 0 0 1vw #ffffff;
     }
     100% {
-        box-shadow: 0 0 20px #ffffff;
+        box-shadow: 0 0 1vw #ffffff;
     }
 }
 
 /*Logo */
 .logo {
-    width: 160px;
-    height: 62px;
-    border-radius: 15px;
+    width: 8vw;
+    height: 7.1vh;
+    border-radius: 0.748vw;
     opacity: 0.9;
     animation: glowing 1s infinite;
 
@@ -87,14 +88,14 @@ header {
 
 nav {
     /* Alignment */
-    text-align: right;
+    text-align: center;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
 
     /* Box */
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 0.25vw 0.5vw;
+    border-radius: 0.249vw;
 
     /* Not Sure */
     transition: all 0.3s;
@@ -108,11 +109,11 @@ nav a {
     justify-content: center;
 
     /* Box */
-    padding: 0.8em 1.2em;
-    border-radius: 25px;
+    padding: 0.64vw 0.96vw;
+    border-radius: 1.247vw;
 
     /* Text */
-    font-size: 17px;
+    font-size: 1.1vw;
     font-weight: bold;
     color: rgb(42, 40, 40);
     text-decoration: none;
@@ -124,13 +125,13 @@ nav a {
 /* Define the glowing animation */
 @keyframes glow {
     0% {
-        text-shadow: 0 0 5px rgb(231, 35, 35);
+        text-shadow: 0 0 0.012vw rgb(231, 35, 35);
     }
     50% {
-        text-shadow: 0 0 5px rgb(231, 35, 35);
+        text-shadow: 0 0 0.012vw rgb(231, 35, 35);
     }
     100% {
-        text-shadow: 0 0 5px  rgb(231, 35, 35);
+        text-shadow: 0 0 0.012vw  rgb(231, 35, 35);
     }
 }
 
@@ -148,10 +149,14 @@ nav a:hover {
     align-items: center;
 
     /* Box */
-    border-left-width: 10px;
-    border-radius: 5px;
+    border-left-width: 0.5vw;
+    border-radius: 0.25vw;
     margin-left: auto;
-    margin-right: 12px;
+    margin-right: 0.8vw;
+    margin: 1vh 0.5vw;
+
+    align-items: center;
+    justify-content: center;
 
 
     /* Not Sure */
@@ -162,13 +167,13 @@ nav a:hover {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 25px;
-    padding: 10px;
-    margin-right: 10px;;
-    width:150px; /* Adjust the width as needed */
-    height: 22px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    border: 0.050vw solid rgba(255, 255, 255, 0.25);
+    border-radius: 1.247vw;
+    padding-right: 0vw;
+    margin-right:  0.5vw;
+    width: 7.6vw; 
+    height: 2vw;
+    box-shadow: 0vw 0vw 10vw rgba(0, 0, 0, 0.3); 
 }
 
 /* Search input */
@@ -177,20 +182,21 @@ nav a:hover {
     border: none;
     outline: none;
     background: transparent; /* Make the input background transparent */
-    font-size: 16px;
+    font-size: 0.8vw;
     color: rgba(39, 38, 38, 0.9); /* Adjust text color and opacity */
 }
 
 /* Search button */
 .search-button {
-    /* Glassmorphic styles */
     background: rgb(149, 146, 146,0.9);
-    border: 0.5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 0.025vw;
+    box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    padding: 5px;
-    width: 36px;
-    height: 36px;
+    padding: 0.25vw;
+    margin-top: 0.1vw;
+    margin-bottom: 0.1vw;
+    width: 1.796vw;
+    height: 1.796vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -200,7 +206,7 @@ nav a:hover {
 /* Apply a hover effect */
 .search-button:hover {
     background: rgba(50, 49, 49, 0.808);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.3);
 }
 
 /* Style the SVG icon */
@@ -217,12 +223,14 @@ nav a:hover {
     /* Alignment */
 
     /* Box */
-    padding: 10px 20px; 
-    border-radius: 15px;
+    padding: 0.5vw 1vw; 
+    border-radius: 0.75vw;
+    width: 5vw;
+    margin: 0.5vh;
 
     /* Text */
     font-weight: bold;
-    font-size: 16px; 
+    font-size: 0.8vw; 
     color: rgba(255, 255, 255, 1); /* Match the text color and opacity */
     text-decoration: none;
     
@@ -236,56 +244,54 @@ nav a:hover {
 }
 
 
-
 /* HomePage Sections*/
 .box-row {
     /* Alignment */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
+    margin: 1vh;
 }
 
 
 .box-container {
     /* Alignment */
-    text-align: left;
     display: flex;
-    justify-content: space-between; /* Distribute space between the boxes */
+    justify-content: center; /* Distribute space between the boxes */
 
     /* Box */
     padding: 2%; /* Adjust padding as needed */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 0.050vw solid rgba(255, 255, 255, 0.3);
     border-radius: 1vw; /* Use vw units for border-radius */
-    margin: 1%;
+    margin:1.5vh 0.5vw;
 
     /* Text */
     color: rgb(20, 17, 17);
+
 
     /* Background with Frosted Glass Effect */
     background: rgba(255, 255, 255, 0.6); /* Adjust the transparency */
     backdrop-filter: blur(2vw); /* Use vw units for blur */
     -webkit-backdrop-filter: blur(2vw); /* For cross-browser compatibility */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Add a subtle border */
+    border-bottom: 0.050vw solid rgba(255, 255, 255, 0.5); /* Add a subtle border */
 
     /* Size of the boxes */
-    width: 30%; /* Default width as a percentage */
-    height: 25vh; /* Default height as a percentage of viewport height */
+    width: 24vw; /* Default width as a percentage */
+    height: 20vh; /* Default height as a percentage of viewport height */
 
-    /* Responsive sizes (optional) */
-    @media (max-width: 768px) {
-        width: 45%; /* Adjust width for screens up to 768px */
-        height: 20vh; /* Adjust height for screens up to 768px */
-    }
 
-    @media (max-width: 480px) {
-        width: 90%; /* Adjust width for screens up to 480px */
-        height: 15vh; /* Adjust height for screens up to 480px */
-    }
+}
+
+.box-container h2{
+    margin-top: 0.5vw;
+    height: 10%;
+    font-size: 1.4vw;
 }
 
 
-/* from here is tom */
+
+
+/* Login/Signup*/
 
 .login-body, .signup-body{
     background: blue;
