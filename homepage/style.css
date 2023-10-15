@@ -480,26 +480,38 @@ a.gmail{
 }
 
 
-/* contact form 
+/* CONTACT PAGE */
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-    width: 90%; /* Full width */
-    padding: 16px; /* Some padding */ 
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
+
+    /* Box */
+    width: 90%; 
+    padding: 16px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
     box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
+    margin-top: 6px; 
+    margin-bottom: 16px; 
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+
   }
   
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
+    /* Alignment */
+
+    /* Box */
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
+
+    /* Text */
+    color: white;
+
+    /* Background */
+    background-color: #04AA6D;
+
+    /* Not Sure */
     cursor: pointer;
   }
   
@@ -532,5 +544,4 @@ input[type=text], select, textarea {
         /* Increase width and height */
         width: 90%; /* Adjust the percentage as needed */
         height: 100%; /* Adjust the height as needed */
-    
   }
