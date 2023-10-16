@@ -20,53 +20,51 @@
     <script src="userstoryscript.js" type="module" defer></script>
   </head>
 
-  <body style = "
-  background-image: url('/homepage/leanbackground.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat">
-    <header>
-      <!-- Logo -->
-      <div class = "logo">
-          <a href="/homepage/2101website.html"><img src="/homepage/new lean logo.png" class = "logo"  alt="Lean Ecommerce Logo"></a>
-      </div>
+  <body id="userstorybody">
+   <!-- Header section -->
+   <header>
+    <!-- Logo -->
+    <div class = "logo">
+        <a href="/homepage/2101website.html"><img src="/homepage/final_logo.png" class = "logo"  alt="Lean Ecommerce Logo"></a>
+    </div>
 
-      <!-- Navbar -->
-      <nav>
-              <a href="/homepage/about.html" id = "aboutLink"> About</a>
-              <a href="/homepage/services.html" id = "servicesLink">Services</a>
-              <a href="/homepage/catalogue.html" id = "catalogueLink">Catalogue</a>
-              <a href="/homepage/contact.html" id = "contactLink">Contact</a>
-      </nav>
+    <!-- Navbar -->
+    <nav>
+            <a href="/userstory/startproject.html" id = "projectLink"> Project</a>
+            <a href="/userstory/userstorypage.html" id = "backlogLink"> Backlog</a>
+            <a href="/addinggroupmembers/playlist.html" id = "playlistLink">People Manager</a>
+            <a href="projectbacklog.html" id = "servicesLink">Completed Stories</a>
+            <a href="catalogue.html" id = "catalogueLink">Burndown Chart</a>
+            <a href="contact.html" id = "contactLink">Contact</a>
+            
+    </nav>
 
-      <!-- Search + Signup -->
-      <div class = "search-signup">
-          <!-- Search bar -->
-          <div class="search-bar">
-              <script>
-                  function checkEnter(event) {
-                      if (event.key === "Enter") {
-                          performSearch();
-                      }
-                  }
-              </script>
-              <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
-              <button class="search-button" onclick="performSearch()">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
-                      <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L19.49 20l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                  </svg>
-              </button>
-          </div>
-          <!-- Sign-in -->
-              <div class = signin-button>
-                  <a href="../accounthandler/loginpage.html" id="logInLink">Sign-in</a>
-              </div>
-          </div>
-      </div>
+    <!-- Search + Signup -->
+    <div class = "search-signup">
+        <!-- Search bar -->
+        <div class="search-bar">
+            <script>
+                function checkEnter(event) {
+                    if (event.key === "Enter") {
+                        performSearch();
+                    }
+                }
+            </script>
+            <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
+            <button class="search-button" onclick="performSearch()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L19.49 20l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                </svg>
+            </button>
+        </div>
+         <!-- Sign-in -->
+        <div class = signin-button>
+            <a href="../accounthandler/loginpage.html" id="logInLink">Sign-in</a>
+        </div>
+    </div>
+</header>
 
-    </header>
-
-
+<main>
     <h1>Create User Story</h1>
     <div class="userstorycontainer">
       <form id="userStoryForm">
@@ -135,7 +133,7 @@
         <a href="sprintbacklog.html" id="sprintbacklog">See Sprint Backlog</a>
         <a href="profiles/userprofiles.html" id="profiles">See Current Users</a>
       </div>
-
+    </main>
   </body>
 
 </html>
