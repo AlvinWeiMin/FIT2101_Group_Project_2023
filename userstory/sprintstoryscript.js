@@ -1,7 +1,7 @@
 
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-  import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey, update} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+  import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey, update , limitToLast , remove} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -20,7 +20,7 @@ const firebaseConfig = {
 
   const db = getDatabase(app);
 
-  window.onload = updateSprintStories;
+  // window.onload = updateSprintStories;
   var sbody = document.getElementById('sprintbody')
   var sprintStoryList = [];
 
@@ -116,3 +116,114 @@ const firebaseConfig = {
 
 
   }
+
+  // for creating sprint stuff
+
+  const sprintInfoContainer = document.getElementById("sprint-information");
+  const sprintInfoButtons = document.getElementById("sprint-information2");
+  localStorage.setItem("hasCurrentSprint", "true")
+
+
+  function updateSprintInfo()
+  {
+    document.addEventListener("DOMContentLoaded", function() {
+    
+      const activeSprintref = ref(db, "activeSprint")
+
+        get(activeSprintref).then((snapshot) => {
+          const isActiveSprint = snapshot.val();
+    
+
+          console.log(isActiveSprint)
+
+          if (isActiveSprint == true) {
+
+         
+                
+                sprintInfoContainer.textContent = 'Sprint Active'
+              sprintInfoButtons.innerHTML = '<button onclick="endSprint()">End Sprint</button>';
+              updateSprintStories();
+          } 
+
+         
+      
+          else {
+            sprintInfoContainer.textContent = "No Active Sprint"
+            sprintInfoButtons.innerHTML = '<button onclick="startSprint()">Create Sprint</button>';
+      
+      
+    
+              } } ) } ) }
+      
+  
+
+      
+
+
+
+
+  
+
+
+ window.onload = updateSprintInfo();
+setInterval(updateSprintInfo, 1000);
+
+
+
+
+document.endSprint = function() {
+     update(ref(db) , {
+
+      activeSprint: false
+    })
+
+    alert('Sprint Ended!');
+
+    SelectAllData();
+
+    remove(ref(db, 'sprintUserStories'))
+
+}
+
+document.startSprint = function() {
+  update(ref(db) , {
+
+   activeSprint: true
+ })
+ alert('Sprint Created!');
+}
+
+
+function AddAllItemsToTable(story){
+  story.forEach(element => {
+    var completedSprintRef = ref(db , "completedSprintStories/" + element.storynum)
+    set(completedSprintRef , { 
+
+      storynum : element.storynum,
+      title : element.title,
+      desc : element.desc,
+      epic : element.epic,
+      estimate : element.estimate,
+      assignee : element.assignee,
+      status : element.status
+
+    })
+    
+  })
+  
+}
+
+function SelectAllData(){
+  const sprintDbRef = query(ref(db, 'sprintUserStories'), orderByKey());
+  onValue(sprintDbRef, (snapshot) => {
+
+    var stories = [];
+
+    snapshot.forEach(childSnapshot => {
+
+      stories.push(childSnapshot.val());
+    
+    });
+
+    AddAllItemsToTable(stories);
+  })}
