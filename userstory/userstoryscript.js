@@ -168,7 +168,7 @@ document.AddStoryToSprint = function(storynum){
   console.log("TEST");
 
   const sprintStoryRef =  ref(db, 'sprintUserStories/' + storyList[storynum][0]);
-
+  const userStoryRef1 =  ref(db, 'userstories/' + storyList[storynum][0])
 
   set(sprintStoryRef, {
     storynum : storyList[storynum][0],
@@ -179,6 +179,8 @@ document.AddStoryToSprint = function(storynum){
     assignee: storyList[storynum][5],
     status: "To Do"
   });
+
+  remove(userStoryRef1)
   
   alert("ADDED STORY TO SPRINT");
 }
