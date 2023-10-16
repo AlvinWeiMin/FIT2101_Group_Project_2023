@@ -1,73 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="userstorystyle.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="project.css">
 
-    <!-- Firebase Scripts -->
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
-    <script src="project.js" type="module" defer></script>
+        <!-- Firebase Scripts -->
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+        <script src="project.js" type="module" defer></script>
 
-    <title>Projects</title>
-</head>
+        <title>Projects</title>
+    </head>
 
-</body>
-    <h1>Create New Project</h1>
-    <div class="projectContainer"> 
-        <form id="projectForm">
-            <label for="projectName">Project Name:</label>
-            <input type="text" id="projectName" name="projectName" placeholder="Enter Project Name" required><br>
-            <br>
-
-            <div>
-                <label for="projectDescription">Project Description:</label><br>
-                <textarea id="projectDescription" name="projectDescription" placeholder="Enter Project Description"></textarea>
+    <body> 
+        <!-- Header section -->
+        <header>
+            <!-- Logo -->
+            <div class = "logo">
+                <a href="homepage/2101website.html"><img src="final_logo.png" class = "logo"  alt="Lean Ecommerce Logo"></a>
             </div>
-            
-            <br>
-            <label for="productOwner">Product Owner:</label>
-            <select id="productOwner" name="productOwner" required>
-            <option value="None">None</option>
-            <option value="Danny">Mr.Danny</option>
-            <option value="Jen">Ms.Jen</option>
-            <option value="Raymond">Mr.Raymond</option>
-            </select><br>
-            <br>
 
-            <label for="scrumMaster">Scrum Master</label>
-            <select id="scrumMaster" name="scrumMaster" required>
-            <option value="None">None</option>
-            <option value="John">John</option>
-            <option value="Sarah">Sarah</option>
-            <option value="Paul">Paul</option>
-            </select><br>
-            <br>
+            <!-- Navbar -->
+            <nav>
+                    <a href="/userstory/startproject.html" id = "projectLink"> Project</a>
+                    <a href="/userstory/userstorypage.html" id = "backlogLink"> Backlog</a>
+                    <a href="/addinggroupmembers/playlist.html" id = "playlistLink">People Manager</a>
+                    <a href="kanbanboard.html" id = "servicesLink">Kanban Board</a>
+                    <a href="catalogue.html" id = "catalogueLink">Burndown Chart</a>
+                    <a href="contact.html" id = "contactLink">Contact</a>
+                    
+            </nav>
 
-            <label for="projectStatus">Project Status</label>
-            <select id="projectStatus" name="projectStatus" required>
-            <option value="Not Started">Not Started</option>
-            <option value="In Progress">In Progress</option>
-            <option value="Completed">Completed</option>
-            </select><br>
-            <br>
-            
-            <label for="projectStartDate">Project Start Date:</label>
-            <input type="date" id="projectStartDate" name="projectStartDate" required><br>
-            <br>
+            <!-- Search + Signup -->
+            <div class = "search-signup">
+                <!-- Search bar -->
+                <div class="search-bar">
+                    <script>
+                        function checkEnter(event) {
+                            if (event.key === "Enter") {
+                                performSearch();
+                            }
+                        }
+                    </script>
+                    <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
+                    <button class="search-button" onclick="performSearch()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L19.49 20l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </div>
+                <!-- Sign-in -->
+                <div class = signin-button>
+                    <a href="../accounthandler/loginpage.html" id="logInLink">Sign-in</a>
+                </div>
+            </div>
+        </header>
 
-            <label for="projectEndDate">Project End Date:</label>
-            <input type="date" id="projectEndDate" name="projectEndDate"><br>
-            <br>
+        <!-- Main content section -->
+        <main>
 
-            <button type="submit" id="createProject">Create</button>
+            <div class="project-container"> 
+                <h1>Create New Project</h1>
+                <form id="projectForm">
+                    <label for="projectName">Project Name:</label>
+                        <input type="text" id="projectName" name="projectName" placeholder="Enter Project Name" required><br>
+                    <br>
 
-        </form>
-    </div>
+                    <div>
+                        <label for="projectDescription">Project Description:</label>
+                        <textarea id="projectDescription" name="projectDescription" placeholder="Enter Project Description"></textarea>
+                    </div>
+                    
+                    <br>
+                    <label for="productOwner">Product Owner:</label>
+                        <select id="productOwner" name="productOwner" required>
+                            <option value="None">None</option>
+                            <option value="Danny">Mr.Danny</option>
+                            <option value="Jen">Ms.Jen</option>
+                            <option value="Raymond">Mr.Raymond</option>
+                    </select><br>
+                    <br>
 
-        <ul uf-id="projectList">
-            <li uf-id="projectName"></li>
-        </ul>
+                    <label for="scrumMaster">Scrum Master</label>
+                        <select id="scrumMaster" name="scrumMaster" required>
+                            <option value="None">None</option>
+                            <option value="John">John</option>
+                            <option value="Sarah">Sarah</option>
+                            <option value="Paul">Paul</option>
+                    </select><br>
+                    <br>
 
+                    <label for="projectStatus">Project Status</label>
+                        <select id="projectStatus" name="projectStatus" required>
+                            <option value="Not Started">Not Started</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Completed">Completed</option>
+                    </select><br>
+                    <br>
+                    
+                    <label for="projectStartDate">Project Start Date:</label>
+                        <input type="date" id="projectStartDate" name="projectStartDate" required><br>
+                    <br>
+
+                    <label for="projectEndDate">Project End Date:</label>
+                        <input type="date" id="projectEndDate" name="projectEndDate"><br>
+                    <br>
+
+                    <button type="submit" id="createProject">Create</button>
+
+                </form>
+            </div>
+
+                <ul uf-id="projectList">
+                    <li uf-id="projectName"></li>
+                </ul>
+        </main>
+    </body>
 </html>
