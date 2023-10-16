@@ -177,7 +177,7 @@ document.AddStoryToSprint = function(storynum){
     epic: storyList[storynum][3],
     estimate: storyList[storynum][4],
     assignee: storyList[storynum][5],
-    status: "ToDo"
+    status: "To Do"
   });
   
   alert("ADDED STORY TO SPRINT");
