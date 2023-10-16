@@ -165,7 +165,22 @@ function addAllUsersAsOption(users) {
 // ADDS THE STORY TO THE CURRENT SPRINT DATABASE
 document.AddStoryToSprint = function(storynum){
 
-  console.log("TEST");
+  
+
+  const activeSprintref = ref(db, "activeSprint")
+
+  get(activeSprintref).then((snapshot) => {
+    const isActiveSprint = snapshot.val();
+
+
+    console.log(isActiveSprint)
+
+    if (isActiveSprint == true) {
+
+
+
+
+
 
   const sprintStoryRef =  ref(db, 'sprintUserStories/' + storyList[storynum][0]);
   const userStoryRef1 =  ref(db, 'userstories/' + storyList[storynum][0])
@@ -184,6 +199,9 @@ document.AddStoryToSprint = function(storynum){
   
   alert("ADDED STORY TO SPRINT");
 }
+else{
+  alert("No Current Sprint!")
+}})}
 
 document.DeleteStory = function(storynum){
 
