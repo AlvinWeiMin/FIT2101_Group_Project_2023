@@ -19,6 +19,8 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const auth = getAuth(app);
 
+
+
 // Function to register a user
 document.register = function() {
     var email = document.getElementById("email").value;
@@ -72,10 +74,11 @@ document.login = function() {
     // Sign in the user using Firebase Authentication
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            const user = userCredential.user;
+            const user = userCredential.user
+            localStorage.setItem("user", user.uid);
             document.getElementById("successfullogin").innerHTML = "Login successful! Redirecting...";
             setTimeout(function() {
-                window.location.href = "../2101website.html";
+                window.location.href = "/homepage/2101website.html";
             }, 1000);
         })
         .catch((error) => {
