@@ -24,6 +24,8 @@ const dbRef =  ref(db);
 window.user = NaN;
 
 
+
+
 // Function to register a user
 document.register = function() {
     var email = document.getElementById("email").value;
@@ -77,10 +79,11 @@ document.login = function() {
     // Sign in the user using Firebase Authentication
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            window.user = userCredential.user;
+            const user = userCredential.user
+            sessionStorage.setItem("user", user.uid);
             document.getElementById("successfullogin").innerHTML = "Login successful! Redirecting...";
             setTimeout(function() {
-                window.location.href = "../homepage/2101website.html";
+                window.location.href = "/homepage/2101website.html";
             }, 1000);
         })
         .catch((error) => {

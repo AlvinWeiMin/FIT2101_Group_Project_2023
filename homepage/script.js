@@ -81,6 +81,12 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = 'contact.html';
     });
     
+    // Contact link logic
+    const account = document.getElementById('accountLink');
+    contactLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.href = 'contact.html';
+    });
 
     const searchButton = document.querySelector('.search-bar button');
     if (searchButton) {  // Ensure the search button is present on the page
