@@ -38,11 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
       document.getElementById('productOwner').value,
       document.getElementById('scrumMaster').value,
       document.getElementById('projectStartDate').value,
-      document.getElementById('projectEndDate').value
+      document.getElementById('projectEndDate').value,
+      document.getElementById('projectAccessToken').value
     );
   });
 
-  function createProject(projectName, projectDesc, prodOwner, scrumMaster, projectStart, projectEnd) {
+  function createProject(projectName, projectDesc, prodOwner, scrumMaster, projectStart, projectEnd, projectAccessToken) {
     // Your code to save the user story to Firebase here
 
     const projectRef =  ref(database, 'projects/' + projectName);
@@ -53,7 +54,9 @@ document.addEventListener("DOMContentLoaded", function() {
       productowner: prodOwner,
       scrummaster: scrumMaster,
       projectstart: projectStart,
-      projectend: projectEnd
+      projectend: projectEnd,
+      projectaccesstoken: projectAccessToken
+      
     });
 
     alert("ADDED PROJECT");

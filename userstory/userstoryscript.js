@@ -227,6 +227,10 @@ document.EditStory = function(storynum){
   6) Member - pop up a new window and only show the allowed textbox to edit the user story while greying out the inaccessible textbox
   7) If changes are done, update the data accordingly in firebase with update()
   */
+
+  /*
+  * Prompt a pop-up to ask for access token
+  */
   const userCurrentRole = userCurrent.id;
 
 }
