@@ -11,8 +11,8 @@ body {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
 
-    background-image: url(city_background.jpg);
-    background-size: cover; /* Adjust the image size as needed */
+    background-image: url(homepage_background.jpg);
+    background-size:cover; /* Adjust the image size as needed */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent image repetition */
 
@@ -21,22 +21,20 @@ body {
     background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 
     background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    /*background-image: linear-gradient(315deg, #2876f9 0%, #6d17cb 74%);*/
-
 }
 
 main {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
+    margin: 1vw;
+    padding: 1vw;
+    border-radius: 0.25vw;
     text-align: center; 
 }
 
 footer {
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
+    margin: 1vw;
+    padding: 1vw;
+    border-radius: 0.25vw;
+    text-align: center; 
 }
 
 
@@ -47,39 +45,44 @@ header {
     align-items:center;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 
-    margin: 15px 50px;
-    border-radius: 15px;
+    /* Box */
+    margin:20px 5vw;
+    height: 55px;
+    border-radius: 20px;
 
     /* Background with Frosted Glass Effect */
-    background: rgba(255, 255, 255, 0.3); /* Adjust the transparency */
-    backdrop-filter: blur(10px); /* Adjust the blur amount */
-    -webkit-backdrop-filter: blur(10px); /* For cross-browser compatibility */
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(0.5vw); 
+    -webkit-backdrop-filter: blur(0.5vw);
     animation: glowing 1s infinite;
 }
 
 /* Define the glowing animation */
 @keyframes glowing {
     0% {
-        box-shadow: 0 0 20px #ffffff;
+        box-shadow: 0 0 1vw #ffffff;
     }
     50% {
-        box-shadow: 0 0 20px #ffffff;
+        box-shadow: 0 0 1vw #ffffff;
     }
     100% {
-        box-shadow: 0 0 20px #ffffff;
+        box-shadow: 0 0 1vw #ffffff;
     }
 }
 
 /*Logo */
 .logo {
-    width: 160px;
-    height: 62px;
-    border-radius: 15px;
-    opacity: 0.9;
-    animation: glowing 1s infinite;
+    width: 120px;
+    height: 55px;
+    border-radius: 20px;
+    opacity: 0.88;
+ 
+}
 
+.logo:hover{
+    opacity: 1;
+    animation: glowing 1s infinite;
 }
 
 
@@ -87,14 +90,16 @@ header {
 
 nav {
     /* Alignment */
-    text-align: right;
+    text-align: center;
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
+   
 
     /* Box */
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 0.25vw 0.5vw;
+    border-radius: 0.249vw;
+    margin-left: 0.5vw;
 
     /* Not Sure */
     transition: all 0.3s;
@@ -102,18 +107,12 @@ nav {
 
 
 nav a {
-    /* Alignment */
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-
     /* Box */
-    padding: 0.8em 1.2em;
-    border-radius: 25px;
+    padding: 10px 10px;
 
     /* Text */
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight:600;
     color: rgb(42, 40, 40);
     text-decoration: none;
 
@@ -121,36 +120,19 @@ nav a {
     transition: all 0.3s;
 }
 
-/* Define the glowing animation */
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px rgb(231, 35, 35);
-    }
-    50% {
-        text-shadow: 0 0 5px rgb(231, 35, 35);
-    }
-    100% {
-        text-shadow: 0 0 5px  rgb(231, 35, 35);
-    }
-}
-
 nav a:hover {
     font-weight: bold;
-    font-size: 18px;
-    /*animation: glow 1s infinite alternate;*/
+    color:#1b5bdc87
   }
   
-
 /*Search + Signup/Login*/
 .search-signup {
     /* Alignment */
     display: flex;
     align-items: center;
-    margin-left: auto;
 
     /* Box */
-    border-left-width: 10px;
-    border-radius: 5px;
+    margin-left: 15vw;
 
     /* Not Sure */
     transition: all 0.3s;
@@ -160,34 +142,36 @@ nav a:hover {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 25px;
-    padding: 5px;
-    width:300px; /* Adjust the width as needed */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add a shadow */
+    border: 0.050vw solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding-right: 0vw;
+    margin-right:  10px;
+    width: 8vw; 
+    height: 30px;
+    box-shadow: 0vw 0vw 10vw rgba(0, 0, 0, 0.3); 
 }
 
 /* Search input */
 #searchInput {
-    flex: 1;
+
     border: none;
     outline: none;
     background: transparent; /* Make the input background transparent */
-    padding: 10px;
-    font-size: 16px;
+    font-size: 0.8vw;
+    margin-left: 0.8vw;
     color: rgba(39, 38, 38, 0.9); /* Adjust text color and opacity */
+    width: 70%
 }
 
 /* Search button */
 .search-button {
-    /* Glassmorphic styles */
     background: rgb(149, 146, 146,0.9);
-    border: 0.5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 0.025vw;
+    box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.3);
     border-radius: 50%;
-    padding: 5px;
-    width: 36px;
-    height: 36px;
+    padding: 3px;
+    width: 25px;
+    height: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,11 +181,13 @@ nav a:hover {
 /* Apply a hover effect */
 .search-button:hover {
     background: rgba(50, 49, 49, 0.808);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.3);
 }
 
 /* Style the SVG icon */
 .search-button svg {
+    align-items: center;
+    justify-content: center;
     width: 100%; /* Make the SVG icon take up 100% of the button's width */
     height: 100%; /* Make the SVG icon take up 100% of the button's height */
     fill: rgba(255, 255, 255, 1); /* Adjust icon color and opacity */
@@ -212,14 +198,19 @@ nav a:hover {
 /* Signin button */
 .signin-button a {
     /* Alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     /* Box */
-    padding: 10px 20px; 
-    border-radius: 15px;
+    padding: 8px 15px; 
+    border-radius: 20px;
+    width: 45px;
+    height: 15px;
 
     /* Text */
     font-weight: bold;
-    font-size: 16px; 
+    font-size: 11px; 
     color: rgba(255, 255, 255, 1); /* Match the text color and opacity */
     text-decoration: none;
     
@@ -233,56 +224,53 @@ nav a:hover {
 }
 
 
-
 /* HomePage Sections*/
 .box-row {
     /* Alignment */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-
 }
 
 
 .box-container {
     /* Alignment */
-    text-align: left;
     display: flex;
-    justify-content: space-between; /* Distribute space between the boxes */
+    justify-content: center; /* Distribute space between the boxes */
 
     /* Box */
-    padding: 2%; /* Adjust padding as needed */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 1%; /* Adjust padding as needed */
+    border: 0.050vw solid rgba(255, 255, 255, 0.3);
     border-radius: 1vw; /* Use vw units for border-radius */
-    margin: 1%;
+    margin:4vh 0.1vw;
 
     /* Text */
     color: rgb(20, 17, 17);
 
+
     /* Background with Frosted Glass Effect */
-    background: rgba(255, 255, 255, 0.6); /* Adjust the transparency */
+    background: rgba(255, 255, 255, 0.7); /* Adjust the transparency */
     backdrop-filter: blur(2vw); /* Use vw units for blur */
     -webkit-backdrop-filter: blur(2vw); /* For cross-browser compatibility */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Add a subtle border */
+    border-bottom: 0.050vw solid rgb(255, 255, 255); /* Add a subtle border */
 
     /* Size of the boxes */
-    width: 30%; /* Default width as a percentage */
-    height: 25vh; /* Default height as a percentage of viewport height */
+    width: 25vw; /* Default width as a percentage */
+    height: 30vh; /* Default height as a percentage of viewport height */
 
-    /* Responsive sizes (optional) */
-    @media (max-width: 768px) {
-        width: 45%; /* Adjust width for screens up to 768px */
-        height: 20vh; /* Adjust height for screens up to 768px */
-    }
 
-    @media (max-width: 480px) {
-        width: 90%; /* Adjust width for screens up to 480px */
-        height: 15vh; /* Adjust height for screens up to 480px */
-    }
+}
+
+.box-container:hover{
+    /* Background with Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.7); /* Adjust the transparency */
+    border: 0.05vw solid rgb(222, 220, 220); /* Add a subtle border */
+    animation: glowing 1s infinite;
+
 }
 
 
-/* from here is tom */
+/* Login/Signup*/
 
 .login-body, .signup-body{
     background: blue;
@@ -476,26 +464,28 @@ a.gmail{
     color: green;
 }
 
-/* contact form 
+
+/* CONTACT PAGE */
 /* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */ 
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-  }
-  
+
+
+    
   /* Style the submit button with a specific background color etc */
   input[type=submit] {
-    background-color: #04AA6D;
-    color: white;
+    /* Alignment */
+
+    /* Box */
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
+
+    /* Text */
+    color: white;
+
+    /* Background */
+    background-color: #04AA6D;
+
+    /* Not Sure */
     cursor: pointer;
   }
   
@@ -505,26 +495,27 @@ input[type=text], select, textarea {
   }
   
   /* Add a background color and some padding around the form */
-  .container.contact {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-  }
+  .contact-container {
+        /* Alignment */
+        text-align: left;
+        display: flex;
+    
+        /* Box */
+        padding: 2%; /* Adjust padding as needed */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 1vw; /* Use vw units for border-radius */
+        margin: 1%;
+    
+        /* Text */
+        color: rgb(20, 17, 17);
+    
+        /* Background with Frosted Glass Effect */
+        background: rgba(255, 255, 255, 0.6); /* Adjust the transparency */
+        backdrop-filter: blur(2vw); /* Use vw units for blur */
+        -webkit-backdrop-filter: blur(2vw); /* For cross-browser compatibility */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* Add a subtle border */
 
-  .box-buttons {
-    width: 100%;
-    height: 100%;
-    padding: 10px 0;
-    background-color: transparent;
-    font-weight: 600;
-    color: rgb(20, 17, 17);
-    border: 0;
-    outline: none;
-    font-size: 38px;
-    border-radius: 4px ;
-
-
-
-    cursor: pointer;
-
+        /* Increase width and height */
+        width: 90%; /* Adjust the percentage as needed */
+        height: 100%; /* Adjust the height as needed */
   }
