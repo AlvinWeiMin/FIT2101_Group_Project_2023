@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
     e.preventDefault();
 
     createProject(
-      document.getElementById('projectName').value,
+      'FIT2101 Project',
       document.getElementById('projectDescription').value,
       document.getElementById('productOwner').value,
       document.getElementById('scrumMaster').value,
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
       projectstart: projectStart,
       projectend: projectEnd,
       projectaccesstoken: projectAccessToken
-      
+
     });
 
     alert("ADDED PROJECT");
