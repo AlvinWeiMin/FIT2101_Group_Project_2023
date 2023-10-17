@@ -20,13 +20,15 @@ const firebaseConfig = {
   
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+const db = getDatabase(app);
 
 const projectForm = document.getElementById('projectForm');
 var storyID = 0
 
 // CREATING A PROJECT
 document.addEventListener("DOMContentLoaded", function() {
+  fetchAndSetUsers();
+
   const projectForm = document.getElementById('projectForm');
 
   projectForm.addEventListener("submit", function(e) {
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function createProject(projectName, projectDesc, prodOwner, scrumMaster, projectStart, projectEnd, projectAccessToken) {
     // Your code to save the user story to Firebase here
 
-    const projectRef =  ref(database, 'projects/' + projectName);
+    const projectRef =  ref(db, 'projects/' + projectName);
 
     set(projectRef, {
       projectname: projectName,
@@ -63,3 +65,47 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 });
 
+// 
+// <label for="scrumMaster">Scrum Master</label>
+// <select id="scrumMaster" name="scrumMaster" required>
+// 
+
+function fetchAndSetUsers() {
+  const dbRef = query(ref(db, 'accounts'), orderByKey());
+  onValue(dbRef, (snapshot) => {
+
+    var users = [];
+
+    snapshot.forEach(childSnapshot => {
+
+      users.push(childSnapshot.val());
+    
+    });
+    
+    addAllUsersAsOptionProductOwner(users);
+    addAllUsersAsOptionScrumMaster(users);
+  })
+}
+
+function addAllUsersAsOptionProductOwner(users) {
+
+  var optionStr = "";
+
+  users.forEach(element => {
+    optionStr += "<option value='" + element.username + "'>" + element.username + "</option>";
+  });
+  
+  document.getElementById("productOwner").innerHTML += (optionStr);
+}
+
+
+function addAllUsersAsOptionScrumMaster(users) {
+
+  var optionStr = "";
+
+  users.forEach(element => {
+    optionStr += "<option value='" + element.username + "'>" + element.username + "</option>";
+  });
+  
+  document.getElementById("scrumMaster").innerHTML += (optionStr);
+}

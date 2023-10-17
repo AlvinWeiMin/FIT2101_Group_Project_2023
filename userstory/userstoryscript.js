@@ -33,7 +33,7 @@ window.onload = SelectAllData;
 // CREATING A USER STORY
 document.addEventListener("DOMContentLoaded", function() {
   const userStoryForm = document.getElementById('userStoryForm');
-  fetchAndSetUsers()
+  fetchAndSetUsers();
 
   userStoryForm.addEventListener("submit", function(e) {
     e.preventDefault();
