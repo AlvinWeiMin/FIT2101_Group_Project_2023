@@ -75,7 +75,7 @@ document.login = function() {
     signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user
-            localStorage.setItem("user", user.uid);
+            sessionStorage.setItem("user", user.uid);
             document.getElementById("successfullogin").innerHTML = "Login successful! Redirecting...";
             setTimeout(function() {
                 window.location.href = "/homepage/2101website.html";

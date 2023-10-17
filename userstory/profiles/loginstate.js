@@ -18,10 +18,10 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 document.addEventListener("DOMContentLoaded", function() {
-  if (localStorage.getItem("user") == null) {
+  if (sessionStorage.getItem("user") == null) {
     document.getElementById("content").innerHTML += "<p>This session does not have an account associated with it.</p>"
   } else {
-    console.log(localStorage)
+    console.log(sessionStorage)
     fetchAccount()
   }
 })
@@ -57,7 +57,7 @@ async function displayData(user) {
 }
 
 async function fetchAccount() {
-  const userRef = query(ref(db, 'accounts/' + localStorage.getItem("user")), orderByKey());
+  const userRef = query(ref(db, 'accounts/' + sessionStorage.getItem("user")), orderByKey());
 
   try {
     const userSnapshot = await Promise.all([
