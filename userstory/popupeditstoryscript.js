@@ -34,7 +34,7 @@ window.onload = SelectAllData;
 document.addEventListener("DOMContentLoaded", function() {
   const userStoryForm = document.getElementById('userStoryForm');
   fetchAndSetUsers();
-  loadStory();
+  fetchAndSetStoryNum();
 
   userStoryForm.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -163,6 +163,38 @@ function addAllUsersAsOption(users) {
   document.getElementById("assigned-to").innerHTML += (optionStr);
 }
 
+function fetchAndSetStoryNum() {
+    const dbRef = query(ref(db, 'userstories'), orderByKey());
+    onValue(dbRef, (snapshot) => {
+  
+      var stories = [];
+  
+      snapshot.forEach(childSnapshot => {
+  
+        stories.push(childSnapshot.val());
+      
+      });
+  
+      addAllStoryNumAsOption(stories);
+    })
+  }
+  
+  function addAllStoryNumAsOption(stories) {
+  
+    var optionStr = "";
+  
+    stories.forEach(element => {
+      optionStr += "<option value='" + element.storynum + "'>" + element.storynum + "</option>";
+    });
+    
+    document.getElementById("storynum").innerHTML += (optionStr);
+  }
+
+function loadStory(storynum){
+
+
+}
+
 
 // ADDS THE STORY TO THE CURRENT SPRINT DATABASE
 document.AddStoryToSprint = function(storynum){
@@ -216,12 +248,6 @@ document.DeleteStory = function(storynum){
 document.EditStory = function(storynum){
   // Prompt a pop-up to ask for access token
   let newWindow = window.open("askaccesstoken.html", "askaccesstoken", "width=600,height=600");
-
-}
-
-
-document.loadStory = function(storynum){
-
 
 }
 
