@@ -279,37 +279,37 @@ nav a:hover {
 .box-container.project {
     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('project.png');
     background-position: center;
-    background-size: cover;
+    background-size: 50% ;
 }
 
 .box-container.backlog {
     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('productBacklog.png');
     background-position: center;
-    background-size: cover;
+    background-size: 50% ;
 }
 
 .box-container.sprint {
     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('sprintBacklog.jpg');
     background-position: center;
-    background-size: cover;
+    background-size: 50% ;
 }
 
 .box-container.stories {
     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('completedUserStory.png');
     background-position: center;
-    background-size: cover;
+    background-size: 50% ;
 }
 
 .box-container.burndownchart {
     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('burndownChart.png');
     background-position: center;
-    background-size: cover;
+    background-size: 50% ;
 }
 
 .box-container.peoplemanager {
     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('managerIcon.png');
     background-position: center;
-    background-size: cover;
+    background-size: 50% ;
 }
 
 /* Login/Signup*/
