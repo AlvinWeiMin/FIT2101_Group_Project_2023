@@ -243,6 +243,7 @@ nav a:hover {
 .box-container {
     /* Alignment */
     display: flex;
+    align-items: center;
     justify-content: center; /* Distribute space between the boxes */
 
     /* Box */
@@ -275,6 +276,14 @@ nav a:hover {
     animation: glowing 1s infinite;
 
 }
+
+.box-container h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 
 .box-container.project {
     background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('project.png');
