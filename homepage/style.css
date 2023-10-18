@@ -16,15 +16,10 @@ body {
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent image repetition */
 
-    /*background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);  
-    background: #E0EAFC;  /* fallback for old browsers 
-    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 
-    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 
 main {
-    margin: 1vw;
+    margin: 6vw;
     padding: 1vw;
     border-radius: 0.25vw;
     text-align: center; 
@@ -38,6 +33,7 @@ footer {
 }
 
 
+
 /* Header Section */
 
 header {
@@ -48,6 +44,7 @@ header {
 
     /* Box */
     margin:20px 5vw;
+    margin-bottom: 40px;
     height: 55px;
     border-radius: 20px;
 
@@ -108,16 +105,21 @@ nav {
 
 nav a {
     /* Box */
-    padding: 10px 10px;
+    padding-left: 7px;
+    padding-right: 7px;
 
     /* Text */
-    font-size: 16px;
+    font-size: 14px;
     font-weight:600;
     color: rgb(42, 40, 40);
     text-decoration: none;
 
     /* Not Sure */
     transition: all 0.3s;
+}
+
+nav a:hover {
+    font-weight: bold;
 }
 
 nav a:hover {
@@ -132,7 +134,7 @@ nav a:hover {
     align-items: center;
 
     /* Box */
-    margin-left: 15vw;
+    margin-left: 10vw;
 
     /* Not Sure */
     transition: all 0.3s;
@@ -232,6 +234,11 @@ nav a:hover {
 
 
 /* HomePage Sections*/
+h2 {
+    font-size: 2vw;
+}
+
+
 .box-row {
     /* Alignment */
     display: flex;
@@ -243,8 +250,9 @@ nav a:hover {
 .box-container {
     /* Alignment */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center; /* Distribute space between the boxes */
+    justify-content: space-between; /* Distribute space between the boxes */
 
     /* Box */
     padding: 1%; /* Adjust padding as needed */
@@ -255,7 +263,6 @@ nav a:hover {
     /* Text */
     color: rgb(20, 17, 17);
 
-
     /* Background with Frosted Glass Effect */
     background: rgba(255, 255, 255, 0.7); /* Adjust the transparency */
     backdrop-filter: blur(2vw); /* Use vw units for blur */
@@ -265,8 +272,6 @@ nav a:hover {
     /* Size of the boxes */
     width: 25vw; /* Default width as a percentage */
     height: 30vh; /* Default height as a percentage of viewport height */
-
-
 }
 
 .box-container:hover{
@@ -274,15 +279,19 @@ nav a:hover {
     background: rgba(255, 255, 255, 0.7); /* Adjust the transparency */
     border: 0.05vw solid rgb(222, 220, 220); /* Add a subtle border */
     animation: glowing 1s infinite;
-
 }
 
-.box-container h2 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 5px 10px;
-    border-radius: 5px;
+
+
+.icon{
+    max-width: 30%; /* Set the maximum width to 100% */
+    height: auto; /* Maintain the aspect ratio */
+    margin-bottom: 7vh;
 }
+
+
+
+
 
 
 .box-container.project {
@@ -315,11 +324,11 @@ nav a:hover {
     background-size: 50% ;
 }
 
-.box-container.peoplemanager {
-    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('managerIcon.png');
-    background-position: center;
-    background-size: 50% ;
-}
+
+
+
+
+
 
 /* Login/Signup*/
 
