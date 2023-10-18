@@ -108,8 +108,8 @@ var myChart = new Chart(ctx, {
       datasets: [{
           label: 'Story Points Completed vs Days', // Label for the dataset
           data: yAxis, // Y-axis data points
-          borderColor: 'rgba(75, 192, 192, 1)', // Line color
-          borderWidth: 1, // Line width
+          borderColor: 'rgba(0,20,150,1)', // Line color
+          borderWidth: 2, // Line width
           fill: false // Do not fill the area under the line
       }]
   },

@@ -12,12 +12,12 @@
         <!-- Link to external CSS file -->
         <link rel="stylesheet" href="userstory.css">
     
-    <!-- Firebase Scripts -->
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
-    
-    <!-- Your custom JavaScript file -->
-    <script src="userstoryscript.js" type="module" defer></script>
+        <!-- Firebase Scripts -->
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+        
+        <!-- Your custom JavaScript file -->
+        <script src="userstoryscript.js" type="module" defer></script>
   </head>
 
   <body>
@@ -67,7 +67,7 @@
 
 
     <main>
-      <div class="userstory-container">
+      <div class="main-container">
         <h1>Create User Story</h1>
         <form id="userStoryForm">
           <label for="storynum">Story Number:</label>
@@ -102,7 +102,7 @@
 
       <h2>Backlog</h2>
       
-      <table id="backlogList">
+      <table id="backlogList" class = "table">
         <thead>
           <th>ID</th>
           <th>Title</th>
