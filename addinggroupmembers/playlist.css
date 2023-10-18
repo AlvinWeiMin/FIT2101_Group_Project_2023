@@ -1,20 +1,298 @@
+/* Please follow this format when writing CSS */
+
+/* Alignment */
+/* Box */
+/* Text */
+/* Background */
+/* Not Sure */
+
+
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0px;
+
+    background-image: url(project_background.jpg);
+    background-size:cover; /* Adjust the image size as needed */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+main {
+    margin: 6vw;
+    padding: 1vw;
+    border-radius: 0.25vw;
+    text-align: center; 
 }
 
-li {
-    margin: 10px 0;
+footer {
+    margin: 1vw;
+    padding: 1vw;
+    border-radius: 0.25vw;
+    text-align: center; 
+}
+
+
+
+/* Header Section */
+
+header {
+     /* Alignment */
+    align-items:center;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+
+    /* Box */
+    margin:20px 5vw;
+    margin-bottom: 40px;
+    height: 55px;
+    border-radius: 20px;
+
+    /* Background with Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(0.5vw); 
+    -webkit-backdrop-filter: blur(0.5vw);
+    animation: glowing 1s infinite;
 }
 
-button {
-    margin-left: 10px;
+/* Define the glowing animation */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 1vw #ffffff;
+    }
+    50% {
+        box-shadow: 0 0 1vw #ffffff;
+    }
+    100% {
+        box-shadow: 0 0 1vw #ffffff;
+    }
+}
+
+/*Logo */
+.logo {
+    width: 120px;
+    height: 55px;
+    border-radius: 20px;
+    opacity: 0.88;
+ 
+}
+
+.logo:hover{
+    opacity: 1;
+    animation: glowing 1s infinite;
+}
+
+
+/*Navigation bar*/
+
+nav {
+    /* Alignment */
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+   
+
+    /* Box */
+    padding: 0.25vw 0.5vw;
+    border-radius: 0.249vw;
+    margin-left: 0.5vw;
+
+    /* Not Sure */
+    transition: all 0.3s;
+}
+
+
+nav a {
+    /* Box */
+    padding: 10px 10px;
+
+    /* Text */
+    font-size: 16px;
+    font-weight:600;
+    color: rgb(42, 40, 40);
+    text-decoration: none;
+
+    /* Not Sure */
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    font-weight: bold;
+    color:#1b5bdc87
+  }
+  
+/*Search + Signup/Login*/
+.search-signup {
+    /* Alignment */
+    display: flex;
+    align-items: center;
+
+    /* Box */
+    margin-left: 15vw;
+
+    /* Not Sure */
+    transition: all 0.3s;
+}
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 0.050vw solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding-right: 0vw;
+    margin-right:  10px;
+    width: 8vw; 
+    height: 30px;
+    box-shadow: 0vw 0vw 10vw rgba(0, 0, 0, 0.3); 
+}
+
+/* Search input */
+#searchInput {
+
+    border: none;
+    outline: none;
+    background: transparent; /* Make the input background transparent */
+    font-size: 0.8vw;
+    margin-left: 0.8vw;
+    color: rgba(39, 38, 38, 0.9); /* Adjust text color and opacity */
+    width: 70%
+}
+
+/* Search button */
+.search-button {
+    background: rgb(149, 146, 146,0.9);
+    border: 0.025vw;
+    box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 3px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Apply a hover effect */
+.search-button:hover {
+    background: rgba(50, 49, 49, 0.808);
+    box-shadow: 0 0 0.5vw rgba(0, 0, 0, 0.3);
+}
+
+/* Style the SVG icon */
+.search-button svg {
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Make the SVG icon take up 100% of the button's width */
+    height: 100%; /* Make the SVG icon take up 100% of the button's height */
+    fill: rgba(255, 255, 255, 1); /* Adjust icon color and opacity */
+}
+
+
+
+/* Signin button */
+.signin-button a {
+    /* Alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Box */
+    padding: 8px 15px; 
+    border-radius: 20px;
+    width: 45px;
+    height: 15px;
+
+    /* Text */
+    font-weight: bold;
+    font-size: 11px; 
+    color: rgba(255, 255, 255, 1); /* Match the text color and opacity */
+    text-decoration: none;
+    
+    /* Background */
+    background: #7ac1fb; 
+}
+
+/* Apply a hover effect */
+.signin-button a:hover {
+    background: linear-gradient(45deg, #c0e2ff, #a0d4ff); /* Pale blue gradient */
+}
+
+
+
+
+/*People Manager Page*/
+input[type=text], select{
+
+/* Box */
+width: 70%; 
+padding: 16px;
+border: 1px solid #ccc; 
+border-radius: 10px; 
+box-sizing: border-box; /* Make sure that padding and width stays in place */
+margin-top: 6px; 
+margin-bottom: 16px; 
+resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type=text], textarea {
+    width: 70%; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    margin-bottom: 10px; 
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
+
+/* Style the submit button with a specific background color etc */
+.icon-button {
+    /* Background */
+    background: #7ac1fb; 
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:42%;
+}
+
+.icon-button svg {
+width: 24px; /* Adjust the size as needed */
+height: 24px; /* Adjust the size as needed */
+margin-right: 5px; /* Adjust the spacing between the icon and text */
+}
+
+.icon-button:hover {
+    background: linear-gradient(45deg, #c0e2ff, #a0d4ff); /* Pale blue gradient */
+}
+
+
+
+.playlist-container {
+/* Alignment */
+align-items: center;
+
+/* Box */
+border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 20px; 
+
+
+/* Text */
+color: rgb(20, 17, 17);
+
+/* Background with Frosted Glass Effect */
+background: rgba(255, 255, 255, 0.6); 
+backdrop-filter: blur(2vw);
+-webkit-backdrop-filter: blur(2vw); 
+border-bottom: 1px solid rgba(255, 255, 255, 0.5); 
+
+/* Increase width and height */
+width: 100%; 
+height: 100%; 
 }
