@@ -85,10 +85,29 @@
 <div class="popup" id="popup">
   <h1 id="story-status-header">Edit Status:</h1>
   
+  <label for="story-status-val">Status:</label>
   <select id="story-status-val" name="story-status" required>
   <option value="To Do">To Do</option>
   <option value="In Progress">In Progress</option>
   <option value="Completed">Completed</option>
+  </select>
+
+  <label for="day-completed">Day Completed:</label>
+  <select id="day-completed" name="day-completed" required>
+  <option value=1>1</option>
+  <option value=2>2</option>
+  <option value=3>3</option>
+  <option value=4>4</option>
+  <option value=5>5</option>
+  <option value=6>6</option>
+  <option value=7>7</option>
+  <option value=8>8</option>
+  <option value=9>9</option>
+  <option value=10>10</option>
+  <option value=11>11</option>
+  <option value=12>12</option>
+  <option value=13>13</option>
+  <option value=14>14</option>
   </select>
 
   <button type="submit" onclick="closePopup()">Done</button>
