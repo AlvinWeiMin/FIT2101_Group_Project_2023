@@ -105,11 +105,14 @@ const firebaseConfig = {
   document.closePopup = function(){
 
     var storyRef = ref(db, 'sprintUserStories/' + status_edit);
+    
 
     update(storyRef ,{ 
-        status : document.getElementById("story-status-val").value
+        status : document.getElementById("story-status-val").value,
+        dayCompleted : Number(document.getElementById("day-completed").value)
     }
         )
+
 
 
     popup.classList.remove("open-popup")

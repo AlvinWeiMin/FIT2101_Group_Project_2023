@@ -11,17 +11,15 @@
     
         <!-- Link to external CSS file -->
         <link rel="stylesheet" href="userstorystyle.css">
-    
+        <link rel="stylesheet" href="burndown.css">
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
     <!-- Your custom JavaScript file -->
-    <script src="sprintstoryscript.js" type="module" defer></script>
+    <script src="burndownchart.js" type="module" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
-
- <!-- Header section -->
- <header>
+<header>
   <!-- Logo -->
   <div class = "logo">
       <a href="/homepage/2101website.html"><img src="/homepage/final_logo.png" class = "logo"  alt="Lean Ecommerce Logo"></a>
@@ -32,8 +30,8 @@
           <a href="/userstory/startproject.html" id = "projectLink"> Project</a>
           <a href="/userstory/userstorypage.html" id = "backlogLink"> Backlog</a>
           <a href="/addinggroupmembers/playlist.html" id = "playlistLink">People Manager</a>
-          <a href="projectbacklog.html" id = "servicesLink">Completed Stories</a>
-          <a href="catalogue.html" id = "catalogueLink">Burndown Chart</a>
+          <a href="kanbanboard.html" id = "servicesLink">Kanban Board</a>
+          <a href="/userstory/burndownchart.html" id = "burndownchart">Burndown Chart</a>
           <a href="contact.html" id = "contactLink">Contact</a>
           
   </nav>
@@ -63,87 +61,5 @@
   </div>
 </header>
 
+<div class="burndown-chart"><canvas id="myChart" ></canvas></div>
 
-
-
-
-<body>
-
-
-<h1 id="sprint-information">Current Sprint</h1>
-<div id="sprint-information2">
-
-
-
-
-
-</div>
-
-
-<h1>Sprint Stories</h1>
-
-<div class="popup" id="popup">
-  <h1 id="story-status-header">Edit Status:</h1>
-  
-  <label for="story-status-val">Status:</label>
-  <select id="story-status-val" name="story-status" required>
-  <option value="To Do">To Do</option>
-  <option value="In Progress">In Progress</option>
-  <option value="Completed">Completed</option>
-  </select>
-
-  <label for="day-completed">Day Completed:</label>
-  <select id="day-completed" name="day-completed" required>
-  <option value=1>1</option>
-  <option value=2>2</option>
-  <option value=3>3</option>
-  <option value=4>4</option>
-  <option value=5>5</option>
-  <option value=6>6</option>
-  <option value=7>7</option>
-  <option value=8>8</option>
-  <option value=9>9</option>
-  <option value=10>10</option>
-  <option value=11>11</option>
-  <option value=12>12</option>
-  <option value=13>13</option>
-  <option value=14>14</option>
-  </select>
-
-  <button type="submit" onclick="closePopup()">Done</button>
-</div>
-
-<table id="sprintlist">
-    <thead>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Epic</th>
-      <th>Estimate</th>
-      <th>Assignee</th>
-      <th>Status</th>
-    </thead>
-  
-    <tbody id="sprintbody">
-  
-      <tr> 
-        <td> </td>
-        <td>  </td>
-        <td>  </td>
-        <td>  </td>
-        <td> </td>
-        <td> </td>
-      </tr>
-  
-  
-    </tbody>
-  </table>
-
-
-  <h3>User Story Page</h3>
-<div>
-  <a href="userstorypage.html" id="userstorypage">See User Story Backlog</a>
-</div>
-</body>
-  
-  
