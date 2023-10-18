@@ -254,26 +254,11 @@ nav a:hover {
     background: #2043b9; 
 }
 
-.popup{
-    width: 400px;
-    
-    background: #3c5077;
-    border-radius: 6px;
-    position: absolute;
-    top: 50% ;
-    left: 50%;
-    opacity: 0;
-    z-index:3;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: 333;
-}
 
 
 .popup{
     width: 400px;
-    z-index:3;
+    z-index:2;
     background: #3c5077;
     border-radius: 6px;
     position: absolute;
@@ -281,7 +266,7 @@ nav a:hover {
     left: 50%;
     opacity: 0;
 
-    transform: translate(-50%, -50%);
+    transform: translate(-150%, -50%);
     text-align: center;
     padding: 0 30px 30px;
     color: 333;
@@ -289,6 +274,7 @@ nav a:hover {
 
 .open-popup{
     opacity: 1;
+    transform: translate(-50%, -50%);
 }
 
 
