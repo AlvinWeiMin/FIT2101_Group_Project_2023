@@ -10,111 +10,110 @@
         <title>Lean Project Management</title>
     
         <!-- Link to external CSS file -->
-        <link rel="stylesheet" href="userstorystyle.css">
+        <link rel="stylesheet" href="userstory.css">
     
-    <!-- Firebase Scripts -->
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
-    
-    <!-- Your custom JavaScript file -->
-    <script src="userstoryscript.js" type="module" defer></script>
+        <!-- Firebase Scripts -->
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+        
+        <!-- Your custom JavaScript file -->
+        <script src="userstoryscript.js" type="module" defer></script>
   </head>
 
-  <body id="userstorybody">
-   <!-- Header section -->
-   <header>
-    <!-- Logo -->
-    <div class = "logo">
-        <a href="/homepage/2101website.html"><img src="/homepage/final_logo.png" class = "logo"  alt="Lean Ecommerce Logo"></a>
-    </div>
+  <body>
 
-    <!-- Navbar -->
-    <nav>
-            <a href="/userstory/startproject.html" id = "projectLink"> Project</a>
-            <a href="/userstory/userstorypage.html" id = "backlogLink"> Backlog</a>
-            <a href="/addinggroupmembers/playlist.html" id = "playlistLink">People Manager</a>
-            <a href="projectbacklog.html" id = "servicesLink">Completed Stories</a>
-            <a href="catalogue.html" id = "catalogueLink">Burndown Chart</a>
-            <a href="contact.html" id = "contactLink">Contact</a>
-            
-    </nav>
+    <!-- Header section -->
+    <header>
+      <!-- Logo -->
+      <div class = "logo">
+          <a href="/homepage/2101website.html"><img src="final_logo.png" class = "logo"  alt="Lean Ecommerce Logo"></a>
+      </div>
 
-    <!-- Search + Signup -->
-    <div class = "search-signup">
-        <!-- Search bar -->
-        <div class="search-bar">
-            <script>
-                function checkEnter(event) {
-                    if (event.key === "Enter") {
-                        performSearch();
-                    }
-                }
-            </script>
-            <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
-            <button class="search-button" onclick="performSearch()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
-                    <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L19.49 20l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                </svg>
-            </button>
-        </div>
-         <!-- Sign-in -->
-        <div class = signin-button>
-            <a href="../accounthandler/loginpage.html" id="logInLink">Sign-in</a>
-        </div>
-    </div>
-</header>
+      <!-- Navbar -->
+      <nav>
+        <a href="/userstory/startproject.html" id = "projectLink"> Project</a>
+        <a href="/userstory/userstorypage.html" id = "backlogLink"> Backlog</a>
+        <a href="/addinggroupmembers/playlist.html" id = "playlistLink">People Manager</a>
+        <a href="/userstory/projectbacklog.html" id = "servicesLink">Completed Stories</a>
+        <a href="/userstory/burndownchart.html" id = "catalogueLink">Burndown Chart</a>
+        <a href="/homepage/contact.html" id = "contactLink">Contact</a>
+              
+      </nav>
 
-<main>
-    <h1>Create User Story</h1>
-    <div class="userstorycontainer">
-      <form id="userStoryForm">
-        <label for="storynum">Story Number:</label>
-        <input type="text" id="storynum" name="storynum" required><br>
-
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" required><br>
-
-        <label for="description">Description:</label>
-        <textarea id="description" name="description"></textarea><br>
-
-        <label for="epic">Epic:</label>
-        <select id="epic" name="epic" required>
-          <option value="None">None</option>
-          <option value="Epic1">Epic 1</option>
-          <option value="Epic2">Epic 2</option>
-          <option value="Epic3">Epic 3</option>
-        </select><br>
-
-        <label for="estimate">Estimate:</label>
-        <input type="number" id="estimate" name="estimate" required><br>
-
-        <label for="assigned-to">Assigned to:</label>
-        <select id="assigned-to" name="assigned-to" required>
-        </select><br>
-
-        <div class="inputbox">
-          <button type="submit" id="submituserstory"  value="Create User Story">Create User Story</button>
-        </div>
-
-      </form>
-    </div>
+      <!-- Search + Signup -->
+      <div class = "search-signup">
+          <!-- Search bar -->
+          <div class="search-bar">
+              <script>
+                  function checkEnter(event) {
+                      if (event.key === "Enter") {
+                          performSearch();
+                      }
+                  }
+              </script>
+              <input type="text" id="searchInput" placeholder="Search..." onkeydown="checkEnter(event)">
+              <button class="search-button" onclick="performSearch()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24">
+                      <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L19.49 20l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                  </svg>
+              </button>
+          </div>
+           <!-- Sign-in -->
+          <div class = signin-button>
+              <a href="../accounthandler/loginpage.html" id="logInLink">Sign-in</a>
+          </div>
+      </div>
+    </header>
 
 
-    <h2>Backlog</h2>
-    <p>All the stories which have not been assigned to a sprint</p>
-    
-    <table id="backlogList">
-      <thead>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Epic</th>
-        <th>Estimate</th>
-        <th>Assignee</th>
-        
-      </thead>
+    <main>
+      <div class="main-container">
+        <h1>Create User Story</h1>
+        <form id="userStoryForm">
+          <label for="storynum">Story Number:</label>
+          <input type="text" id="storynum" name="storynum" required><br>
 
-      <tbody id="backlogbody">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required><br>
+
+          <label for="description">Description:</label>
+          <textarea id="description" name="description"></textarea><br>
+
+          <label for="epic">Epic:</label>
+          <select id="epic" name="epic" required>
+            <option value="None">None</option>
+            <option value="Epic1">Epic 1</option>
+            <option value="Epic2">Epic 2</option>
+            <option value="Epic3">Epic 3</option>
+          </select><br>
+
+          <label for="estimate">Estimate:</label>
+          <input type="number" id="estimate" name="estimate" required><br>
+
+          <label for="assigned-to">Assigned to:</label>
+          <select id="assigned-to" name="assigned-to" required>
+          </select><br>
+
+          <div class="inputbox">
+            <button type="submit" id="submituserstory"  value="Create User Story">Create User Story</button>
+          </div>
+
+        </form>
+
+      <h2>Backlog</h2>
+      
+      <table id="backlogList" class = "table">
+        <thead>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Epic</th>
+          <th>Estimate</th>
+          <th>Assignee</th>
+          
+        </thead>
+
+        <tbody id="backlogbody">
 
         <tr> 
           <td> </td>
@@ -125,15 +124,16 @@
           <td> </td>
         </tr>
 
-      </tbody>
-    </table>
+        </tbody>
+      </table>
 
-    <h3>Sprint Backlog</h3>
-      <div>
-        <a href="sprintbacklog.html" id="sprintbacklog">See Sprint Backlog</a>
-        <a href="profiles/userprofiles.html" id="profiles">See Current Users</a>
+      <h3>Sprint Backlog</h3>
+        <div>
+          <a class = "buttons" href="sprintbacklog.html" id="sprintbacklog">See Sprint Backlog</a>
+          <a class = "buttons" href="profiles/userprofiles.html" id="profiles">See Current Users</a>
+        </div>
+
       </div>
     </main>
   </body>
-
 </html>

@@ -11,7 +11,7 @@ body {
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0px;
 
-    background-image: url(homepage_background.jpg);
+    background-image: url(project_background.jpg);
     background-size:cover; /* Adjust the image size as needed */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent image repetition */
@@ -223,6 +223,13 @@ nav a:hover {
     background: linear-gradient(45deg, #c0e2ff, #a0d4ff); /* Pale blue gradient */
 }
 
+.dark-mode-button {
+    background-color: transparent; /* Optional: to remove any default background */
+    border: none; /* To remove any default border */
+    outline: none; /* To remove the focus border */
+    cursor: pointer; /* To indicate it's clickable */
+}
+
 
 /* HomePage Sections*/
 .box-row {
@@ -236,6 +243,7 @@ nav a:hover {
 .box-container {
     /* Alignment */
     display: flex;
+    align-items: center;
     justify-content: center; /* Distribute space between the boxes */
 
     /* Box */
@@ -269,6 +277,49 @@ nav a:hover {
 
 }
 
+.box-container h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+.box-container.project {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('project.png');
+    background-position: center;
+    background-size: 50% ;
+}
+
+.box-container.backlog {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('productBacklog.png');
+    background-position: center;
+    background-size: 50% ;
+}
+
+.box-container.sprint {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('sprintBacklog.jpg');
+    background-position: center;
+    background-size: 50% ;
+}
+
+.box-container.stories {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('completedUserStory.png');
+    background-position: center;
+    background-size: 50% ;
+}
+
+.box-container.burndownchart {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('burndownChart.png');
+    background-position: center;
+    background-size: 50% ;
+}
+
+.box-container.peoplemanager {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('managerIcon.png');
+    background-position: center;
+    background-size: 50% ;
+}
 
 /* Login/Signup*/
 

@@ -28,13 +28,13 @@
 
         <!-- Navbar -->
         <nav>
-                <a href="/userstory/startproject.html" id = "projectLink"> Project</a>
-                <a href="/userstory/userstorypage.html" id = "backlogLink"> Backlog</a>
-                <a href="/addinggroupmembers/playlist.html" id = "playlistLink">People Manager</a>
-                <a href="kanbanboard.html" id = "servicesLink">Kanban Board</a>
-                <a href="catalogue.html" id = "catalogueLink">Burndown Chart</a>
-                <a href="contact.html" id = "contactLink">Contact</a>
-                <a href="/userstory/profiles/currentuser.html" id = "accountLink">Current Account</a>
+            <a href="/userstory/startproject.html" id = "projectLink"> Project</a>
+            <a href="/userstory/userstorypage.html" id = "backlogLink"> Backlog</a>
+            <a href="/addinggroupmembers/playlist.html" id = "playlistLink">People Manager</a>
+            <a href="/userstory/projectbacklog.html" id = "servicesLink">Completed Stories</a>
+            <a href="/userstory/burndownchart.html" id = "catalogueLink">Burndown Chart</a>
+            <a href="/homepage/contact.html" id = "contactLink">Contact</a>
+            
         </nav>
 
         <!-- Search + Signup -->
@@ -59,35 +59,50 @@
             <div class = signin-button>
                 <a href="../accounthandler/loginpage.html" id="logInLink">Sign-in</a>
             </div>
+
+        <!-- Dark Mode -->
+        <button class="dark-mode-button" id = "dark-mode-button">
+            <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+                <clipPath id = "circleClip">
+                    <circle cx="25" cy="25" r="25"/>
+                </clipPath>
+
+                <image href = "darkmode.png" clip-path="url(#circleClip)" height="50" width="50"/>>
+            </svg>
+        </button>
+        <h2> Dark Mode </h2>
+
         </div>
+
+
     </header>
 
     <!-- Main content section -->
     <main>
         <div class="box-row">
-            <button class ="box-container" onclick="window.location.href = '../userstory/startproject.html';">
+            <button class ="box-container project" onclick="window.location.href = '/userstory/startproject.html';">
                 <h2>Project</h2>
             </button>
            
-            <button class ="box-container" onclick="window.location.href = '../userstory/userstorypage.html';">
+            <button class ="box-container backlog" onclick="window.location.href = '/userstory/userstorypage.html';">
                 <h2>Product Backlog</h2>
             </button>
     
-            <button class ="box-container" onclick="window.location.href = '../userstory/sprintbacklog.html';">
+            <button class ="box-container sprint" onclick="window.location.href = '/userstory/sprintbacklog.html';">
                 <h2>Sprint Backlog</h2>
             </button>
         </div>
     
         <div class="box-row">
-            <button class ="box-container" onclick="window.location.href = '../userstory/projectbacklog.html';">
+            <button class ="box-container stories" onclick="window.location.href = '/userstory/projectbacklog.html';">
                 <h2>Completed Stories</h2>
             </button>
     
-            <button class ="box-container" onclick="window.location.href = '../services.html';">
+            <button class ="box-container burndownchart" onclick="window.location.href = '/userstory/burndownchart.html';">
                 <h2>Burndown Chart</h2>
             </button>
 
-            <button class ="box-container" onclick="window.location.href = '../userstory/startproject.html';">
+            <button class ="box-container peoplemanager" onclick="window.location.href = '/userstory/startproject.html';">
                 <h2>People Manager</h2>
             </button>
         </div>
