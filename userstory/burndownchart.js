@@ -23,7 +23,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-
+var ctx = document.getElementById('myChart').getContext('2d');
 
 
 
@@ -79,7 +79,7 @@ function fetchData(){
 
 
 
-    
+    drawChart(days , estimations , totalStoryPoints);
 
 
   });
@@ -98,15 +98,42 @@ function fetchData(){
 
 }
 window.onload = fetchData;
-// 'sprintStoriesMarkedComplete/'
 
-
-//   onValue(sprintDbRef, (snapshot) => {
-
-//     var stories = [];
-
-//     snapshot.forEach(childSnapshot => {
-
-//       stories.push(childSnapshot.val());
-    
-//     });
+function drawChart(xAxis, yAxis , ytot) {
+// Create a new chart instance
+var myChart = new Chart(ctx, {
+  type: 'line', // Specify the chart type
+  data: {
+      labels: xAxis, // X-axis labels
+      datasets: [{
+          label: 'Story Points Completed vs Days', // Label for the dataset
+          data: yAxis, // Y-axis data points
+          borderColor: 'rgba(75, 192, 192, 1)', // Line color
+          borderWidth: 1, // Line width
+          fill: false // Do not fill the area under the line
+      }]
+  },
+  options: {
+      scales: {
+          x: {
+              type: 'category', // Specify X-axis type as category for string labels
+              labels: xAxis, // X-axis labels
+              beginAtZero: true, // Start X-axis from zero
+              title: {
+                display: true,
+                text: 'Days', // X-axis label
+            },
+          },
+          y: {
+              labels: yAxis,
+              beginAtZero: true, // Start Y-axis from zero
+              title: {
+                display: true,
+                text: 'Story Points', // X-axis label
+                min: 0,
+                max: ytot
+            },
+          }
+      }
+  }
+})};
