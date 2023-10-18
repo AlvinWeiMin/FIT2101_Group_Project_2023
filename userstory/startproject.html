@@ -61,10 +61,11 @@
         <main>
 
             <div class="main-container"> 
-                <h1>Create New Project</h1>
+                <h1>Create New Project or Edit Existing Project</h1>
                 <form id="projectForm">
-                    <label for="projectName">Project Name:</label>
-                        <input type="text" id="projectName" name="projectName" placeholder="Enter Project Name" required><br>
+                    <label for="projectName">Project Name: FIT2101 Project</label>
+                        <!-- <input type="text" id="projectName" name="projectName" placeholder="Enter Project Name" required> -->
+                    <br>
                     <br>
 
                     <div>
@@ -75,19 +76,19 @@
                     <br>
                     <label for="productOwner">Product Owner:</label>
                         <select id="productOwner" name="productOwner" required>
-                            <option value="None">None</option>
+                            <!-- <option value="None">None</option>
                             <option value="Danny">Mr.Danny</option>
                             <option value="Jen">Ms.Jen</option>
-                            <option value="Raymond">Mr.Raymond</option>
+                            <option value="Raymond">Mr.Raymond</option> -->
                     </select><br>
                     <br>
 
                     <label for="scrumMaster">Scrum Master</label>
                         <select id="scrumMaster" name="scrumMaster" required>
-                            <option value="None">None</option>
+                            <!-- <option value="None">None</option>
                             <option value="John">John</option>
                             <option value="Sarah">Sarah</option>
-                            <option value="Paul">Paul</option>
+                            <option value="Paul">Paul</option> -->
                     </select><br>
                     <br>
 
@@ -107,7 +108,11 @@
                         <input type="date" id="projectEndDate" name="projectEndDate"><br>
                     <br>
 
-                    <button type="submit" id="createProject">Create</button>
+                    <label for="projectAccessToken">Project Access Token:</label>
+                        <input type="text" id="projectAccessToken" name="projectAccessToken" placeholder="Enter a New Project Access Token" required><br>
+                    <br>
+
+                    <button type="submit" id="createProject">Create/Edit</button>
 
                 </form>
             </div>

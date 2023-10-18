@@ -3,6 +3,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
   import { getDatabase, ref, set, get, child, push , onValue, query, orderByKey, remove} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyA1JWDoe41ljxU6Wx2K3xDlzkTmQ_pHWyc",
@@ -32,7 +33,7 @@ window.onload = SelectAllData;
 // CREATING A USER STORY
 document.addEventListener("DOMContentLoaded", function() {
   const userStoryForm = document.getElementById('userStoryForm');
-  fetchAndSetUsers()
+  fetchAndSetUsers();
 
   userStoryForm.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -177,11 +178,6 @@ document.AddStoryToSprint = function(storynum){
 
     if (isActiveSprint == true) {
 
-
-
-
-
-
   const sprintStoryRef =  ref(db, 'sprintUserStories/' + storyList[storynum][0]);
   const userStoryRef1 =  ref(db, 'userstories/' + storyList[storynum][0])
 
@@ -203,11 +199,23 @@ else{
   alert("No Current Sprint!")
 }})}
 
+// DELETE THE STORY FROM THE CURRENT SPRINT DATABASE
 document.DeleteStory = function(storynum){
 
   const userStoryRef =  ref(db, 'userstories/' + storynum);
 
   remove(userStoryRef)
+
+  const admin = "Administrator";
+  const member = "Member";
+  const viewer = "Viewer";
+}
+
+// EDIT THE STORY FROM THE CURRENT SPRINT DATABASE IF CONDITIONS WERE MET
+document.EditStory = function(storynum){
+  // Prompt a pop-up to ask for access token
+  let newWindow = window.open("askaccesstoken.html", "askaccesstoken", "width=600,height=600");
+
 }
 
 
