@@ -34,6 +34,7 @@ window.onload = SelectAllData;
 document.addEventListener("DOMContentLoaded", function() {
   const userStoryForm = document.getElementById('userStoryForm');
   fetchAndSetUsers();
+  loadStory();
 
   userStoryForm.addEventListener("submit", function(e) {
     e.preventDefault();
@@ -215,6 +216,12 @@ document.DeleteStory = function(storynum){
 document.EditStory = function(storynum){
   // Prompt a pop-up to ask for access token
   let newWindow = window.open("askaccesstoken.html", "askaccesstoken", "width=600,height=600");
+
+}
+
+
+document.loadStory = function(storynum){
+
 
 }
 
