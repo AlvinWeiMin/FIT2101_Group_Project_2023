@@ -223,6 +223,13 @@ nav a:hover {
     background: linear-gradient(45deg, #c0e2ff, #a0d4ff); /* Pale blue gradient */
 }
 
+.dark-mode-button {
+    background-color: transparent; /* Optional: to remove any default background */
+    border: none; /* To remove any default border */
+    outline: none; /* To remove the focus border */
+    cursor: pointer; /* To indicate it's clickable */
+}
+
 
 /* HomePage Sections*/
 .box-row {
