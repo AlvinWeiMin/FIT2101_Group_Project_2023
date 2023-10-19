@@ -100,6 +100,12 @@ function fetchData(){
 window.onload = fetchData;
 
 function drawChart(xAxis, yAxis , ytot) {
+  var idealIncrement = ytot / 14;
+  var ideal= [];
+  for( var i=0; i <=15 -1 ; i++){
+    ideal.push(idealIncrement * i);
+  }
+  ideal.reverse();
 // Create a new chart instance
 var myChart = new Chart(ctx, {
   type: 'line', // Specify the chart type
@@ -111,7 +117,19 @@ var myChart = new Chart(ctx, {
           borderColor: 'rgba(0,20,150,1)', // Line color
           borderWidth: 2, // Line width
           fill: false // Do not fill the area under the line
-      }]
+      },
+      {
+        label: 'Story Estimate',
+        data: ideal,
+        borderColor: 'rgb(255,0,0)',
+        borderWidth: 3,
+        fill: false
+      }
+    
+    ]
+
+
+
   },
   options: {
       scales: {
