@@ -10,7 +10,7 @@
       <title>Lean Project Management</title>
   
       <!-- Link to external CSS file -->
-      <link rel="stylesheet" href="userstory.css">
+      <link rel="stylesheet" href="sprintbacklog.css">
   
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
@@ -63,16 +63,45 @@
         </header>
 
         <main>
-            <div class = "main-container">
+            <div class = "sprintbacklog-main-container">
+
+                <!--Current Sprint Status-->
                 <h1 id="sprint-information">Current Sprint</h1>
                 <div id="sprint-information2">
                 </div>
 
-                <h1>Sprint Stories</h1>
 
-                <div>
-                    <h1 id="story-status-header">Edit Status:</h1>
+
+                <!--Sprint Stories Table-->
+                <h1>Sprint Stories</h1>
+                    <table id="sprintlist" class="table">
+                        <thead>
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Epic</th>
+                            <th>Estimate</th>
+                            <th>Assignee</th>
+                            <th>Status</th>
+                        </thead>
+                    
+                        <tbody id="sprintbody">
+                            <tr> 
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                                <td> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                <!--Edit Story Status Popup-->
+                <div class= "popup" id = "popup">
+                    <h1 id ="story-status-header">Edit Status:</h1>
                 
+                    <!--Story Status Dropdown-->
                     <label for="story-status-val">Status:</label>
                         <select id="story-status-val" name="story-status" required>
                             <option value="To Do">To Do</option>
@@ -80,6 +109,7 @@
                             <option value="Completed">Completed</option>
                         </select>
 
+                    <!--Day Sprint Completed Dropdown-->
                     <label for="day-completed">Day Completed:</label>
                         <select id="day-completed" name="day-completed" required>
                             <option value=1>1</option>
@@ -98,40 +128,18 @@
                             <option value=14>14</option>
                         </select>
 
-                    <button type="buttons" onclick="closePopup()">Done</button>
-                </div>
-
-                <table id="sprintlist" class="table">
-                    <thead>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Epic</th>
-                        <th>Estimate</th>
-                        <th>Assignee</th>
-                        <th>Status</th>
-                    </thead>
+                    <!--Day Completed Done Button-->
+                    <button type="submit" onclick="closePopup()">Done</button>
                 
-                    <tbody id="sprintbody">
-                        <tr> 
-                            <td> </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td> </td>
-                            <td> </td>
-                        </tr>
-                    
-                    </tbody>
-                </table>
-
+                </div>
+               
 
                 <h3>User Story Page</h3>
                 <div>
                     <a href="userstorypage.html" id="userstorypage">See User Story Backlog</a>
                 </div>
-            </div>
 
+            </div>
         </main>
     </body>
 </html>

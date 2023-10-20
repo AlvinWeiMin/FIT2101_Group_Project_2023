@@ -34,6 +34,7 @@ footer {
 
 h2 {
     margin: 1vh 1vw;
+    font-size: medium;
 }
 
 
@@ -356,11 +357,12 @@ a.gmail{
     flex-direction: column;
 }
 
+/* Form Title */
 .form h2 {
-    text-align: left;
+    text-align: center;
     color: #222;
     margin: 10px 0px;
-    font-size: 25px;
+    font-size: medium;
 }
 
 /* Form Element --> Div groups of label and input in a row */
@@ -382,10 +384,8 @@ a.gmail{
 
 /* Dropdown Menu */
 .selector{
-    /* Alignment */
     flex-direction: row;
 
-    /*Box */
     border: 1px solid #dedede;
     border-radius: 5px;
 
@@ -569,7 +569,6 @@ a.gmail{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left:42%;
 }
 
 .submit-button:hover {
@@ -642,9 +641,10 @@ a.gmail{
 
     /* Box */
     padding: 4px 15px; 
+    border-color: white;
     border-radius: 20px;
-    width: 50px;
-    height: 20px;
+    width: 15em;
+    height: 3em;
 
     /* Text */
     font-weight: bold;
@@ -653,11 +653,16 @@ a.gmail{
     text-decoration: none;
     
     /* Background */
-    background: #0c87ec; 
+    background: #6eafe4; 
 }
 
+.visit-button a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+}
 .visit-button:hover {
-    background: #2043b9; 
+    background: #2f96fd; 
 }
 
   
@@ -699,19 +704,30 @@ a.gmail{
 
 /* 1st type of popup */
 .popup{
-    width: 400px;
-    z-index:2;
-    background: #3c5077;
-    border-radius: 6px;
-    position: absolute;
-    top: 50% ;
-    left: 50%;
-    opacity: 0;
+    /* Alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between the boxes */
 
-    transform: translate(-150%, -50%);
-    text-align: center;
-    padding: 0 30px 30px;
-    color: 333;
+    /* Box */
+    padding: 1% 1%;
+    border: 0.050vw solid rgba(255, 255, 255, 0.3);
+    border-radius: 1vw; /* Use vw units for border-radius */
+    margin:4vh 0.1vw;
+
+    /* Text */
+    color: rgb(20, 17, 17);
+
+    /* Background with Frosted Glass Effect */
+    background: rgba(255, 255, 255, 0.7); /* Adjust the transparency */
+    backdrop-filter: blur(2vw); /* Use vw units for blur */
+    -webkit-backdrop-filter: blur(2vw); /* For cross-browser compatibility */
+    border-bottom: 0.050vw solid rgb(255, 255, 255); /* Add a subtle border */
+
+    /* Size of the boxes */
+    width: 40vw; /* Default width as a percentage */
+    height: 30vh; /* Default height as a percentage of viewport height */
 }
 
 .open-popup{
@@ -719,24 +735,6 @@ a.gmail{
     transform: translate(-50%, -50%);
 }
 
-
-/* 2nd type of popup? */
-.popup {
-    position: absolute;
-    top:50%;
-    left:50%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-    width: 380px;
-    padding:  20px 30px;
-    background: #fff;
-    box-shadow: 2px 2px 5px 5px rgba(0,0,0,0.15);
-    border-radius: 10px;
-    transition: 
-        top 0ms ease-in-out 200ms,
-        opacity 200ms ease-in-out 0ms,
-        transform 20ms ease-in-out 0ms;
-}
 
 
 .popup h1{
@@ -746,19 +744,6 @@ a.gmail{
     font-family: Arial, sans-serif;
     font-weight: 500;
     margin: 30px;
-}
-
-.popup button{
-    width: 100%;
-    margin-top: 50px;
-    padding: 10px 0;
-    background: #6fd649;
-    color: #ffffff;
-    border: 0;
-    outline: none;
-    font-size: 18px;
-    border-radius: 4px ;
-    cursor: pointer;
 }
 
 
